@@ -43,7 +43,13 @@ int main(int argc, char** argv) {
                 cout<<"The greatest common divisor of "<<n<<" and "<<m<<" is "<<gcd(m,n)<<endl;
                 break;
             case 3:
-                cout<<"Fibonacci number";
+                int i;
+                cout<<"Enter the index of Fibonacci number ";
+                cin>>i;
+                cout<<"Algorithm that saves computed values: "<<endl;
+                cout<<"F"<<i<<"="<<fibonacci(i)<<endl;
+                cout<<"Algorithm that computes values every time: "<<endl;
+                cout<<"F"<<i<<"="<<F(i)<<endl;
                 break;
             case 4:
                 cout<<"The tower of Hanoi";

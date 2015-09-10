@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/exponentiation.o \
+	${OBJECTDIR}/fibonacci.o \
 	${OBJECTDIR}/gcd.o \
 	${OBJECTDIR}/main.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/exponentiation.o: exponentiation.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/exponentiation.o exponentiation.cpp
+
+${OBJECTDIR}/fibonacci.o: fibonacci.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/fibonacci.o fibonacci.cpp
 
 ${OBJECTDIR}/gcd.o: gcd.cpp 
 	${MKDIR} -p ${OBJECTDIR}

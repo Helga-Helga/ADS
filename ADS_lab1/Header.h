@@ -10,10 +10,10 @@
 #include <iostream>
 using namespace std;
 
-int menu();
 float exponentiation(int power, float number);
 int gcd(int m, int n);
-
+int fibonacci(int n);
+int F(int n);
 
 #endif	/* HEADER_H */
 
