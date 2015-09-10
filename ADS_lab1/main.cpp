@@ -38,9 +38,14 @@ int main(int argc, char** argv) {
                 break;
             case 2:
                 int m, n;
-                cout<<"Enter two numbers";
+                cout<<"Enter two numbers ";
                 cin>>n>>m;
+                try {
                 cout<<"The greatest common divisor of "<<n<<" and "<<m<<" is "<<gcd(m,n)<<endl;
+                }
+                catch (const invalid_argument& e) {
+                    cout<<"Bad input."<<endl;
+                }
                 break;
             case 3:
                 unsigned int i;

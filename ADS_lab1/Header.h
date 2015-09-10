@@ -8,6 +8,7 @@
 #ifndef HEADER_H
 #define	HEADER_H
 #include <iostream>
+#include <stdexcept>
 using namespace std;
 
 float exponentiation(unsigned int power, float number);
