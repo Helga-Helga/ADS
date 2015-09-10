@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
         
         switch(variant){
             case 1:
-                int power;
+                unsigned int power;
                 float number;
                 cout<<"Enter a valid non-zero number ";
                 cin>>number;
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
                 cout<<"The greatest common divisor of "<<n<<" and "<<m<<" is "<<gcd(m,n)<<endl;
                 break;
             case 3:
-                int i;
+                unsigned int i;
                 cout<<"Enter the index of Fibonacci number ";
                 cin>>i;
                 cout<<"Algorithm that saves computed values: "<<endl;
@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
                 cout<<"F"<<i<<"="<<F(i)<<endl;
                 break;
             case 4:
-                int rings, initial, auxiliary, final;
+                int unsigned rings, initial, auxiliary, final;
                 cout<<"Enter the number of rings ";
                 cin>>rings;
                 cout<<"Enter the number of initial column ";

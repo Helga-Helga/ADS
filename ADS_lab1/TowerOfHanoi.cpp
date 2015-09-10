@@ -1,12 +1,14 @@
 #include "Header.h"
 
-void TowerOfHanoi(int n, int initial, int auxiliary, int final){
-    if (n == 0) cout<<"Nothing to do"<<endl;
-    else if (n == 1) cout<<initial<<" -> "<<final;
-    else if (n == 2){
-        cout<<initial<<" -> "<<auxiliary<<endl;
+void TowerOfHanoi(unsigned int n, unsigned int initial, unsigned int auxiliary, unsigned int final){
+    if (n == 0) 
+        cout<<"Nothing to do"<<endl;
+    else if (n == 1) 
         cout<<initial<<" -> "<<final<<endl;
-        cout<<auxiliary<<" -> "<<final<<endl;
+    else if (n == 2){
+        cout<<initial<<" -> "<<auxiliary<<"\n"
+            <<initial<<" -> "<<final<<"\n"
+            <<auxiliary<<" -> "<<final<<"\n";
     }
     else if (n > 2){
         TowerOfHanoi(n-1, initial, final, auxiliary);

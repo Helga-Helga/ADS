@@ -1,6 +1,6 @@
 #include "Header.h"
 
-int fibonacci(int n){
+int fibonacci(unsigned int n){
     static int known[50];
     if (known[n] != 0) return known[n];
     int t = n;
@@ -9,7 +9,7 @@ int fibonacci(int n){
     return known[n]=t;
 }
 
-int F(int n) {
+int F(unsigned int n) {
     if (n < 1) return 0;
     if (n == 1) return 1;
     return F(n-1) + F(n-2);

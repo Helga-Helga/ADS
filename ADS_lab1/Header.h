@@ -10,11 +10,11 @@
 #include <iostream>
 using namespace std;
 
-float exponentiation(int power, float number);
+float exponentiation(unsigned int power, float number);
 int gcd(int m, int n);
-int fibonacci(int n);
-int F(int n);
-void TowerOfHanoi(int n, int initial, int auxiliary, int third);
+int fibonacci(unsigned int n);
+int F(unsigned int n);
+void TowerOfHanoi(unsigned int n, unsigned int initial, unsigned int auxiliary, unsigned int final);
 
 #endif	/* HEADER_H */
 
