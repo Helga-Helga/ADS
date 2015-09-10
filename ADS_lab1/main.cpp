@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: olya
  *
- * Created on September 3, 2015, 2:00 PM
+ * Created on September 10, 2015, 1:47 PM
  */
 
 #include <cstdlib>
