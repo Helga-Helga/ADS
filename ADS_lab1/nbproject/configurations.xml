@@ -13,6 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>TowerOfHanoi.cpp</itemPath>
       <itemPath>exponentiation.cpp</itemPath>
       <itemPath>fibonacci.cpp</itemPath>
       <itemPath>gcd.cpp</itemPath>
@@ -41,6 +42,8 @@
       <compileType>
       </compileType>
       <item path="Header.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TowerOfHanoi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="exponentiation.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -72,6 +75,8 @@
         </asmTool>
       </compileType>
       <item path="Header.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TowerOfHanoi.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="exponentiation.cpp" ex="false" tool="1" flavor2="0">
       </item>

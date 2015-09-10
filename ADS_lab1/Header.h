@@ -14,6 +14,7 @@ float exponentiation(int power, float number);
 int gcd(int m, int n);
 int fibonacci(int n);
 int F(int n);
+void TowerOfHanoi(int n, int initial, int auxiliary, int third);
 
 #endif	/* HEADER_H */
 

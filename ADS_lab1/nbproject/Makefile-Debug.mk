@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/TowerOfHanoi.o \
 	${OBJECTDIR}/exponentiation.o \
 	${OBJECTDIR}/fibonacci.o \
 	${OBJECTDIR}/gcd.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ads_lab1: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ads_lab1 ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/TowerOfHanoi.o: TowerOfHanoi.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TowerOfHanoi.o TowerOfHanoi.cpp
 
 ${OBJECTDIR}/exponentiation.o: exponentiation.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -52,7 +52,16 @@ int main(int argc, char** argv) {
                 cout<<"F"<<i<<"="<<F(i)<<endl;
                 break;
             case 4:
-                cout<<"The tower of Hanoi";
+                int rings, initial, auxiliary, final;
+                cout<<"Enter the number of rings ";
+                cin>>rings;
+                cout<<"Enter the number of initial column ";
+                cin>>initial;
+                cout<<"Enter the number of final column ";
+                cin>>final;
+                cout<<"Enter the number of auxiliary column ";
+                cin>>auxiliary;
+                TowerOfHanoi(rings, initial, auxiliary, final);
                 break;
             case 5:
                 cout<<"Exiting..."<<endl;

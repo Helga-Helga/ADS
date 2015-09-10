@@ -1,7 +1,7 @@
 #include "Header.h"
 
 int fibonacci(int n){
-    static int known[60];
+    static int known[50];
     if (known[n] != 0) return known[n];
     int t = n;
     if (n < 1) return 0;
