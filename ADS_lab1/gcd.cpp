@@ -5,6 +5,8 @@ int gcd(int m, int n){
         throw invalid_argument("Invalid syntax.");
     }         
             
-    if (n==0) return m;
+    if (n==0) {
+        return (m < 0)? -m : m;
+    }
     return gcd(n, m%n);
 }
