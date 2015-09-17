@@ -1,0 +1,64 @@
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    ADS_lab2/Makefile
+	deleted:    ADS_lab2/main.cpp
+	deleted:    ADS_lab2/nbproject/Makefile-Debug.mk
+	deleted:    ADS_lab2/nbproject/Makefile-Release.mk
+	deleted:    ADS_lab2/nbproject/Makefile-impl.mk
+	deleted:    ADS_lab2/nbproject/Makefile-variables.mk
+	deleted:    ADS_lab2/nbproject/Package-Debug.bash
+	deleted:    ADS_lab2/nbproject/Package-Release.bash
+	deleted:    ADS_lab2/nbproject/configurations.xml
+	deleted:    ADS_lab2/nbproject/private/Makefile-variables.mk
+	deleted:    ADS_lab2/nbproject/private/configurations.xml
+	deleted:    ADS_lab2/nbproject/private/launcher.properties
+	deleted:    ADS_lab2/nbproject/private/private.xml
+	deleted:    ADS_lab2/nbproject/project.xml
+	deleted:    ASD/lab1/Makefile
+	deleted:    ASD/lab1/main.cpp
+	deleted:    ASD/lab1/nbproject/Makefile-Debug.mk
+	deleted:    ASD/lab1/nbproject/Makefile-Release.mk
+	deleted:    ASD/lab1/nbproject/Makefile-impl.mk
+	deleted:    ASD/lab1/nbproject/Makefile-variables.mk
+	deleted:    ASD/lab1/nbproject/Package-Debug.bash
+	deleted:    ASD/lab1/nbproject/Package-Release.bash
+	deleted:    ASD/lab1/nbproject/configurations.xml
+	deleted:    ASD/lab1/nbproject/private/Makefile-variables.mk
+	deleted:    ASD/lab1/nbproject/private/configurations.xml
+	deleted:    ASD/lab1/nbproject/private/launcher.properties
+	deleted:    ASD/lab1/nbproject/private/private.xml
+	deleted:    ASD/lab1/nbproject/project.xml
+	deleted:    ASD/lab2/Makefile
+	deleted:    ASD/lab2/main.cpp
+	deleted:    ASD/lab2/nbproject/Makefile-Debug.mk
+	deleted:    ASD/lab2/nbproject/Makefile-Release.mk
+	deleted:    ASD/lab2/nbproject/Makefile-impl.mk
+	deleted:    ASD/lab2/nbproject/Makefile-variables.mk
+	deleted:    ASD/lab2/nbproject/Package-Debug.bash
+	deleted:    ASD/lab2/nbproject/Package-Release.bash
+	deleted:    ASD/lab2/nbproject/configurations.xml
+	deleted:    ASD/lab2/nbproject/private/Makefile-variables.mk
+	deleted:    ASD/lab2/nbproject/private/configurations.xml
+	deleted:    ASD/lab2/nbproject/private/launcher.properties
+	deleted:    ASD/lab2/nbproject/private/private.xml
+	deleted:    ASD/lab2/nbproject/project.xml
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ADS_lab1/fibonacci.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	ADS_lab1/.dep.inc
+	ADS_lab2/
+	out.txt
+
