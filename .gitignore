@@ -1,2 +1,3 @@
 /ADS_lab1/build/
 /ADS_lab1/dist/
+*.pyc
