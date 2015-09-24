@@ -24,16 +24,17 @@ if answer == 1:
     reduce(check, sample)
 elif answer == 2:
     sample = copy(s)
-    comparisons, sample = quick_sort(sample)
     print "Quick sort: "
-    print 'Comparisons: ', comparisons
+    comparisons, sample = quick_sort(sample)
     print (sample)
+    print 'Comparisons: ', comparisons
     reduce(check, sample)
 elif answer == 3:
     sample = copy(s)
     print "Real quick sort: "
-    real_quick_sort(sample, 0, len(sample) - 1)
+    comparisons, sample = real_quick_sort(sample, 0, len(sample) - 1)
     print (sample)
+    print 'Comparisons: ', comparisons
     reduce(check, sample)
 else:
     raise Exception('Bad input')
