@@ -31,29 +31,43 @@ def quick_sort(s):
     return info['comparisons'], info['sorted']
 
 
-def real_quick_sort(sample, p, r):
-    if p < r:
-        q = partition(sample, p, r)
-        i, j = get_corners(sample, p, r, q)
-        real_quick_sort(sample, p, i)
-        real_quick_sort(sample, j, r)
+def real_quick_sort(s, first, last):
+    info = {
+        'comparisons': 0
+    }
 
 
-def partition(sample, p, r):
-    x = sample[r]
-    i = p - 1
-    for j in range(p, r):
-        if sample[j] < x:
-            i += 1
-            sample[i], sample[j] = sample[j], sample[i]
-    sample[i + 1], sample[r] = sample[r], sample[i + 1]
-    return i + 1
+    def _real_quick_sort(sample, p, r):
+        info['comparisons'] += 1
+        if p < r:
+            q = partition(sample, p, r)
+            i, j = get_corners(sample, p, r, q)
+            _real_quick_sort(sample, p, i)
+            _real_quick_sort(sample, j, r)
 
 
-def get_corners(sample, p, r, q):
-    i, j = q - 1, q + 1
-    while sample[i] == sample[q] and i > p:
-        i -= 1
-    while sample[j] == sample[q] and j < r:
-        j += 1
-    return i, j
+    def partition(sample, p, r):
+        x = sample[r]
+        i = p - 1
+        for j in range(p, r):
+            info['comparisons'] += 1
+            if sample[j] < x:
+                i += 1
+                sample[i], sample[j] = sample[j], sample[i]
+        sample[i + 1], sample[r] = sample[r], sample[i + 1]
+        return i + 1
+
+
+    def get_corners(sample, p, r, q):
+        i, j = q - 1, q + 1
+        while i > p and sample[i] == sample[q]:
+            info['comparisons'] += 1
+            i -= 1
+        while j < r and sample[j] == sample[q]:
+            info['comparisons'] += 1
+            j += 1
+        return i, j
+
+    _real_quick_sort(s, first, last)
+    info['sorted'] = s
+    return info['comparisons'], info['sorted']
