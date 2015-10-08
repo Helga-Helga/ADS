@@ -31,3 +31,4 @@ struct Element{
 };
 
 struct Element* createList(char);
+void insertAtTail(struct Element *, char);
