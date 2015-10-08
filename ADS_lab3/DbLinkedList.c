@@ -20,3 +20,14 @@ DbLinkedList* createList() {
     return tmp;
 }
  
+void deleteList(DbLinkedList **list) {
+    Node *tmp = (*list)->head;
+    Node *next = NULL;
+    while (tmp) {
+        next = tmp->next;
+        free(tmp);
+        tmp = next;
+    }
+    free(*list);
+    (*list) = NULL;
+}
