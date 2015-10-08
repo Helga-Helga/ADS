@@ -9,3 +9,11 @@ typedef struct _DbLinkedList {
     Node *head;
     Node *tail;
 } DbLinkedList;
+
+DbLinkedList* createList() {
+    DbLinkedList *tmp = (DbLinkedList*) malloc(sizeof(DbLinkedList));
+    tmp->size = 0;
+    tmp->head = tmp->tail = NULL;
+    
+    return tmp;
+}
