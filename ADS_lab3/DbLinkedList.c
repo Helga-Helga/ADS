@@ -31,3 +31,22 @@ void deleteList(DbLinkedList **list) {
     free(*list);
     (*list) = NULL;
 }
+
+void pushFront(DbLinkedList *list, void *data) {
+    Node *tmp = (Node*) malloc(sizeof(Node));
+    if (tmp == NULL) {
+        exit(1);
+    }
+    tmp->value = data;
+    tmp->next = list->head;
+    tmp->prev = NULL;
+    if (list->head) {
+        list->head->prev = tmp;
+    }
+    list->head = tmp;
+    
+    if (list->tail == NULL) {
+        list->tail = tmp;
+    }
+    list->size++;
+}
