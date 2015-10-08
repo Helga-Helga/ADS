@@ -1,3 +1,5 @@
+#include "Header.h"
+
 typedef struct _Node {
     void *value;
     struct _Node *next;
@@ -17,3 +19,4 @@ DbLinkedList* createList() {
     
     return tmp;
 }
+ 
