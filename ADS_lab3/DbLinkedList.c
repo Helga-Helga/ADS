@@ -3,3 +3,9 @@ typedef struct _Node {
     struct _Node *next;
     struct _Node *prev;
 } Node;
+
+typedef struct _DbLinkedList {
+    size_t size;
+    Node *head;
+    Node *tail;
+} DbLinkedList;
