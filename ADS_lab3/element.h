@@ -25,5 +25,7 @@ extern "C" {
 #include <stdio.h>
 
 struct Element{
-    
+    char data;
+    struct Element *next;
+    struct Element *prev;
 };
