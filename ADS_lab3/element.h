@@ -29,3 +29,5 @@ struct Element{
     struct Element *next;
     struct Element *prev;
 };
+
+struct Element* createList(char);
