@@ -21,3 +21,9 @@ extern "C" {
 
 #endif	/* ELEMENT_H */
 
+#include <stdlib.h>
+#include <stdio.h>
+
+struct Element{
+    
+};
