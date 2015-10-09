@@ -1,19 +1,30 @@
 #include "element.h"
 
-struct Element* createList(char value) {
+struct Element* createElement(char value) {
     struct Element *elem = (struct Element*)malloc(sizeof(struct Element));
     elem->data = value;
     elem->next = NULL;
     elem->prev = NULL;
 }
 
-void insertAtTail(struct Element *elem, char value) {
-    while (elem->next != NULL) {
+struct Element* insert(struct Element *elem, struct Element *newElem, int position) {
+    int i;
+    if (position < 0) {
+        return NULL;
+    }
+    if (elem == NULL) {
+        elem = createElement(newElem->data);
+    }
+    for (i = 0; i <= position; i++) {
         elem = elem->next;
+        if (!elem->next) {
+            return NULL;
+        }
     }
     elem->next = (struct Element*)malloc(sizeof(struct Element));
-    (elem->next)->prev = elem;
+    elem->next->prev = elem;
     elem = elem->next;
-    elem->data = value;
+    elem->data = newElem->data;
     elem->next = NULL;
+        
 }
