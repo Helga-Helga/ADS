@@ -30,5 +30,5 @@ struct Element{
     struct Element *prev;
 };
 
-struct Element* createList(char);
-void insertAtTail(struct Element *, char);
+struct Element* createElement(char);
+struct Element* insert(struct Element *, struct Element *, int);

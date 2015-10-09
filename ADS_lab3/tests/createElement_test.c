@@ -22,8 +22,8 @@ int clean_suite(void) {
     return 0;
 }
 
-void testCreateList() {
-    struct Element *elem = createList('a');
+void testCreateElement() {
+    struct Element *elem = createElement('a');
     CU_ASSERT_PTR_NOT_NULL(elem);
     CU_ASSERT_EQUAL(elem->data, 'a');
     CU_ASSERT_PTR_NULL(elem->next);
@@ -45,7 +45,7 @@ int main() {
     }
 
     /* Add the tests to the suite */
-    if ((NULL == CU_add_test(pSuite, "testCreateList", testCreateList))) {
+    if ((NULL == CU_add_test(pSuite, "testCreateList", testCreateElement))) {
         CU_cleanup_registry();
         return CU_get_error();
     }
