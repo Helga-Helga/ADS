@@ -15,9 +15,9 @@ struct Element* insert(struct Element *elem, struct Element *newElem, int positi
     else if (elem == NULL) {
         return NULL;
     }
-    for (i = 0; i <= position; i++) {
+    while (++i < position) {
         elem = elem->next;
-        if (!elem->next) {
+        if (!elem) {
             return NULL;
         }
     }
