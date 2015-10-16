@@ -9,23 +9,23 @@ struct Element* createElement(char value) {
 
 struct Element* insert(struct Element *elem, struct Element *newElem, int position) {
     int i = 0;
-    struct Element *tmp;
+    struct Element *curr;
     if (position < 0) {
         return NULL;
     }
     else if (elem == NULL) {
         return NULL;
     }
-    while (i < position) {
-        elem = elem->next;
-        if (!elem) {
+    curr = elem;
+    while (++i < position) {
+        curr = curr->next;
+        if (!curr) {
             return NULL;
-        }i++;
+        }
     }
-    elem->next = (struct Element*)malloc(sizeof(struct Element));
-    elem->next->prev = elem;
-    tmp = elem;
-    elem = elem->next;
-    elem->data = newElem->data;
-    elem->next = tmp->next;        
+    if (curr->next) {
+        newElem->next = curr->next;
+        newElem->next->prev = newElem;
+    } 
+    return *elem;
 }
