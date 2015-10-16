@@ -8,7 +8,7 @@ struct Element* createElement(char value) {
 }
 
 struct Element* insert(struct Element *elem, struct Element *newElem, int position) {
-    int i;
+    int i = 0;
     struct Element *tmp;
     if (position < 0) {
         return NULL;
@@ -16,11 +16,11 @@ struct Element* insert(struct Element *elem, struct Element *newElem, int positi
     else if (elem == NULL) {
         return NULL;
     }
-    while (++i < position) {
+    while (i < position) {
         elem = elem->next;
         if (!elem) {
             return NULL;
-        }
+        }i++;
     }
     elem->next = (struct Element*)malloc(sizeof(struct Element));
     elem->next->prev = elem;
