@@ -27,5 +27,5 @@ struct Element* insert(struct Element *elem, struct Element *newElem, int positi
         newElem->next = curr->next;
         newElem->next->prev = newElem;
     } 
-    return *elem;
+    return elem;
 }
