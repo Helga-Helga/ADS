@@ -8,11 +8,13 @@
 	"build_systems":
 	[
 		{
+			"working_dir": "${project_path:${folder}}",
 			"name": "Make - Tests",
 			"shell": true,
 			"cmd": ["make build-tests"]
 		},
 		{
+			"working_dir": "${project_path:${folder}}",
 			"name": "Make - Run Tests",
 			"shell": true,
 			"cmd": ["make run-tests"]
