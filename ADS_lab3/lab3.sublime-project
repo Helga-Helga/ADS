@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "Make - Tests",
+			"shell": true,
+			"cmd": ["make build-tests"]
+		},
+		{
+			"name": "Make - Run Tests",
+			"shell": true,
+			"cmd": ["make run-tests"]
+		}
+	]
+}
