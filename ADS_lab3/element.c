@@ -16,6 +16,11 @@ struct Element* insert(struct Element *elem, struct Element *newElem, int positi
     else if (elem == NULL) {
         return NULL;
     }
+    else if (position == 0) {
+        newElem->next = elem;
+        elem->prev = newElem;
+        return newElem;
+    }
     curr = elem;
     while (++i < position) {
         curr = curr->next;
@@ -27,5 +32,7 @@ struct Element* insert(struct Element *elem, struct Element *newElem, int positi
         newElem->next = curr->next;
         newElem->next->prev = newElem;
     } 
+    curr->next = newElem;
+    newElem->prev = curr;
     return elem;
 }

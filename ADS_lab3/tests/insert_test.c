@@ -23,9 +23,28 @@ int clean_suite(void) {
 }
 
 void testInsert() {
-    struct Element *elem = createElement('a');
-    struct Element *newElem = createElement('b');
-    CU_ASSERT_PTR_NULL(insert(elem, newElem, -1));
+    struct Element *a = createElement('a');
+    struct Element *b = createElement('b');
+    struct Element *c = createElement('c');
+    struct Element *d = createElement('d');
+    CU_ASSERT_PTR_NULL(insert(a, b, -1));
+    CU_ASSERT_PTR_NULL(insert(NULL, b, 0));
+    CU_ASSERT_EQUAL(insert(a, b, 0), b);
+    CU_ASSERT_EQUAL(b->next, a);
+    CU_ASSERT_EQUAL(a->prev, b);
+    CU_ASSERT_EQUAL(insert(b, c, 2), b);
+    CU_ASSERT_EQUAL(a->next, c);
+    CU_ASSERT_EQUAL(c->prev, a);
+    CU_ASSERT_EQUAL(b->next, a);
+    CU_ASSERT_EQUAL(a->prev, b);
+    CU_ASSERT_EQUAL(insert(b, d, 2), b);
+    CU_ASSERT_EQUAL(a->next, d);
+    CU_ASSERT_EQUAL(d->prev, a);
+    CU_ASSERT_EQUAL(b->next, a);
+    CU_ASSERT_EQUAL(a->prev, b);
+    CU_ASSERT_EQUAL(d->next, c);
+    CU_ASSERT_EQUAL(c->prev, d);
+    CU_ASSERT_PTR_NULL(c->next);
 }
 
 int main() {
