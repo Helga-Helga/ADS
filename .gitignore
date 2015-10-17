@@ -1,3 +1,6 @@
 /ADS_lab1/build/
 /ADS_lab1/dist/
 *.pyc
+/ADS_lab3/build/
+/ADS_lab3/dist/
+[^\.]*
