@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"testInsertA",
+				"testInsertAtMiddlePosition"
+			],
+			[
+				"in",
+				"insert"
+			],
+			[
+				"t",
+				"test"
+			],
+			[
+				"c",
+				"createElement_test"
+			],
+			[
 				"C",
 				"CUNIT_FLAGS"
 			],
@@ -16,13 +32,18 @@
 	"buffers":
 	[
 		{
-			"contents": "CC=gcc\nCC_FLAGS=-Wall\nCUNIT_FLAGS=-lcunit\nEXECUTABLE=lab3\n\nall:\n	$(CC) $(CC_FLAGS) element.c main.c -o $(EXECUTABLE)\n\nbuild-tests:\n	$(CC) $(CC_FLAGS) $(CUNIT_FLAGS) element.c tests/insert_test.c -o tests/insert_test\n	$(CC) $(CC_FLAGS) $(CUNIT_FLAGS) element.c tests/createElement_test.c -o tests/createElement_test\n\nclean:\n	@rm $(EXECUTABLE)\n",
 			"file": "Makefile",
-			"file_size": 308,
-			"file_write_time": 130895763687001203,
 			"settings":
 			{
-				"buffer_size": 342,
+				"buffer_size": 416,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lab3.sublime-project",
+			"settings":
+			{
+				"buffer_size": 335,
 				"line_ending": "Unix"
 			}
 		},
@@ -35,10 +56,18 @@
 			}
 		},
 		{
-			"file": "tests/createElement_test.c",
+			"file": "tests/insert_test.c",
 			"settings":
 			{
-				"buffer_size": 1247,
+				"buffer_size": 2668,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "element.h",
+			"settings":
+			{
+				"buffer_size": 449,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,9 +80,85 @@
 			}
 		}
 	],
-	"build_system": "Packages/Makefile/Make.sublime-build",
+	"build_system": "Make - Run Tests",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Make - Run Tests",
+					""
+				],
+				[
+					"Make - Tests",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Make - Run Tests",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Make - Run Tests",
+					""
+				],
+				[
+					"Make - Tests",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Make - Tests",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Make - Tests",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Make - Tests",
+				""
+			]
+		],
 		[
 			[
 				[
@@ -74,10 +179,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 180.0,
-		"last_filter": "save",
+		"height": 117.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"syn c",
+				"Set Syntax: C"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"p e",
+				"Project: Edit Project"
+			],
 			[
 				"save",
 				"Project: Save As"
@@ -108,10 +225,11 @@
 	],
 	"file_history":
 	[
+		"/home/olya/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -125,6 +243,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"save"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -142,7 +261,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -151,15 +270,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 342,
+						"buffer_size": 416,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								314,
-								314
+								388,
+								388
 							]
 						],
 						"settings":
@@ -170,11 +289,39 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "lab3.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								68,
+								68
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "element.c",
 					"semi_transient": false,
 					"settings":
@@ -186,45 +333,86 @@
 						"selection":
 						[
 							[
-								228,
-								228
+								893,
+								893
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tests/insert_test.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2668,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										2173,
+										2173
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								1948,
+								1948
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1104.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "tests/createElement_test.c",
+					"buffer": 4,
+					"file": "element.h",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1247,
+						"buffer_size": 449,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								87,
+								87
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C++/C.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -234,7 +422,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "main.c",
 					"semi_transient": false,
 					"settings":
@@ -258,7 +446,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -266,7 +454,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -297,7 +485,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 112.0
+		"height": 229.0
 	},
 	"output.find_results":
 	{
@@ -307,7 +495,7 @@
 	"project": "lab3.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":

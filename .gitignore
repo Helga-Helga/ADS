@@ -3,4 +3,3 @@
 *.pyc
 /ADS_lab3/build/
 /ADS_lab3/dist/
-[^\.]*

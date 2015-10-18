@@ -7,3 +7,7 @@ void testInsertAtNULL();
 void testInsertAtFirstPosition();
 void testInsertAtMiddlePosition();
 void testCreateElement();
+void testDeleteFromNegativePosition();
+void testDeleteFromNULL();
+void testDeleteFromFirstPosition();
+void testDeleteFromMiddlePosition();

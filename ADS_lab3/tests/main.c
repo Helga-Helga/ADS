@@ -9,7 +9,7 @@ int clean_suite(void) {
 }
 
 int main() {
-    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL;
+    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, deleteElementSuite = NULL;
 
     /* Initialize the CUnit test registry */
     if (CUE_SUCCESS != CU_initialize_registry())
@@ -28,14 +28,24 @@ int main() {
         return CU_get_error();
     }
 
+    deleteElementSuite = CU_add_suite("Delete element", init_suite, clean_suite);
+    if (NULL == deleteElementSuite) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+
     /* Add the tests to the suite */
     if (
     	(NULL == CU_add_test(createElementSuite, "Create element", testCreateElement)) ||
     	(NULL == CU_add_test(insertElementSuite, "Insert at negative position", testInsertAtNegativePosition)) ||
         (NULL == CU_add_test(insertElementSuite, "Insert at NULL", testInsertAtNULL)) ||
         (NULL == CU_add_test(insertElementSuite, "Insert at first posiition", testInsertAtFirstPosition)) ||
-        (NULL == CU_add_test(insertElementSuite, "Insert at middle position", testInsertAtMiddlePosition))
-        ) {
+        (NULL == CU_add_test(insertElementSuite, "Insert at middle position", testInsertAtMiddlePosition)) ||
+        (NULL == CU_add_test(deleteElementSuite, "Delete from negative position", testDeleteFromNegativePosition)) ||
+        (NULL == CU_add_test(deleteElementSuite, "Delete from NULL", testDeleteFromNULL)) ||
+        (NULL == CU_add_test(deleteElementSuite, "Delete from first position", testDeleteFromFirstPosition)) ||
+        (NULL == CU_add_test(deleteElementSuite, "Delete from middle position", testDeleteFromMiddlePosition)) ||
+        0) {
         CU_cleanup_registry();
         return CU_get_error();
     }
