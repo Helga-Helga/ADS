@@ -30,3 +30,8 @@ void testDeleteFromMiddlePosition() {
 	CU_ASSERT_PTR_NULL(b->next);
 	CU_ASSERT_PTR_NULL(b->prev);
 }
+
+void testDeleteSingleElement() {
+	struct Element *a = createElement('a');
+	CU_ASSERT_PTR_NULL(deleteElement(a, 0));
+}

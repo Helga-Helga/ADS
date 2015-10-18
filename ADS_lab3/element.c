@@ -53,6 +53,9 @@ struct Element* deleteElement(struct Element *elem, int position) {
     else if (elem == NULL) {
         return NULL;
     }
+    else if (!elem->next && position == 0){
+        return NULL;
+    }
     else if (position == 0) {
         head = elem->next;
         destructElement(elem);
