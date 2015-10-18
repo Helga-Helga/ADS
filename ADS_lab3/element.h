@@ -31,4 +31,6 @@ struct Element{
 };
 
 struct Element* createElement(char);
-struct Element* insert(struct Element *, struct Element *, int);
+void destructElement(struct Element *);
+struct Element* insertElement(struct Element *, struct Element *, int);
+struct Element* deleteElement(struct Element *, int);
