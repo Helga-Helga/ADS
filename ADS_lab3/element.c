@@ -76,3 +76,12 @@ struct Element* deleteElement(struct Element *elem, int position) {
     destructElement(curr);
     return head;
 }
+
+void deleteList(struct Element *elem) {
+    struct Element *curr;
+    curr = elem;
+    while (curr) {
+        free(curr);
+        curr = curr->next;
+    }
+}
