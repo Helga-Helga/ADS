@@ -10,6 +10,12 @@ struct Element* createElement(char value) {
 
 void destructElement(struct Element *elem) {
     free (elem);
+    if (elem->prev->next) {
+        elem->prev->next = NULL;
+    }
+    if (elem->next->prev) {
+        elem->next->prev = NULL;
+    }
 }
 
 struct Element* insertElement(struct Element *elem, struct Element *newElem, int position) {
@@ -77,11 +83,16 @@ struct Element* deleteElement(struct Element *elem, int position) {
     return head;
 }
 
-void deleteList(struct Element *elem) {
+int deleteList(struct Element *elem) {
     struct Element *curr;
-    curr = elem;
-    while (curr) {
-        free(curr);
-        curr = curr->next;
+    if (!elem) {
+        return 0;
     }
+    curr = elem;
+    while (curr->next) {
+        curr = curr->next;
+        destructElement(curr->prev);
+    }
+    destructElement(curr);
+    return 1;
 }
