@@ -10,10 +10,13 @@ all:
 	$(CC) $(CC_FLAGS) element.c main.c -o $(EXECUTABLE)
 
 build-tests:
-	$(CC) $(CC_FLAGS) element.c  $(TESTS_SRC) -o tests/run_tests $(CUNIT_FLAGS)
+	$(CC) $(CC_FLAGS) -g element.c  $(TESTS_SRC) -o tests/run_tests $(CUNIT_FLAGS)
 
 run-tests: build-tests
 	tests/run_tests
+
+check-memory-leaks: build-tests
+	valgrind --track-origins=yes --tool=memcheck --leak-check=full tests/run_tests
 
 clean:
 	@rm $(EXECUTABLE)
