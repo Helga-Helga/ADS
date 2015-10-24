@@ -25,8 +25,11 @@ struct Element* insertElement(struct Element *elem, struct Element *newElem, int
     if (position < 0) {
         return NULL;
     }
-    else if (elem == NULL) {
+    else if (elem == NULL && position != 0) {
         return NULL;
+    }
+    else if (elem == NULL) {
+        return newElem;
     }
     else if (position == 0) {
         newElem->next = elem;

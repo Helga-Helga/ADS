@@ -7,20 +7,7 @@
 
 #ifndef ELEMENT_H
 #define	ELEMENT_H
-
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-
-
-
-#ifdef	__cplusplus
-}
-#endif
-
-#endif	/* ELEMENT_H */
-
+ 
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -37,3 +24,5 @@ int destructElement(struct Element *);
 struct Element* insertElement(struct Element *, struct Element *, int);
 struct Element* deleteElement(struct Element *, int);
 int deleteList(struct Element *);
+
+#endif	/* ELEMENT_H */
