@@ -1,6 +1,6 @@
 #include "element.h"
 
-struct Element* createElement(char value) {
+struct Element* createElement(T value) {
     struct Element *elem = (struct Element*)malloc(sizeof(struct Element));
     elem->data = value;
     elem->next = NULL;
@@ -8,14 +8,15 @@ struct Element* createElement(char value) {
     return elem;
 }
 
-void destructElement(struct Element *elem) {
+int destructElement(struct Element *elem) {
+    if (elem->prev) {
+        elem->prev->next = elem->next;
+    }
+    if (elem->next) {
+        elem->next->prev = elem->prev;
+    }
     free (elem);
-    if (elem->prev->next) {
-        elem->prev->next = NULL;
-    }
-    if (elem->next->prev) {
-        elem->next->prev = NULL;
-    }
+    return 0;
 }
 
 struct Element* insertElement(struct Element *elem, struct Element *newElem, int position) {

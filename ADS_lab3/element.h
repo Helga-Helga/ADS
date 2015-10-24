@@ -24,14 +24,16 @@ extern "C" {
 #include <stdlib.h>
 #include <stdio.h>
 
+typedef char T;
+
 struct Element{
-    char data;
+    T data;
     struct Element *next;
     struct Element *prev;
 };
 
-struct Element* createElement(char);
-void destructElement(struct Element *);
+struct Element* createElement(T);
+int destructElement(struct Element *);
 struct Element* insertElement(struct Element *, struct Element *, int);
 struct Element* deleteElement(struct Element *, int);
 int deleteList(struct Element *);
