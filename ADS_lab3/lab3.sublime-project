@@ -18,6 +18,12 @@
 			"name": "Make - Run Tests",
 			"shell": true,
 			"cmd": ["make run-tests"]
+		},
+		{
+			"working_dir": "${project_path:${folder}}",
+			"name": "Make - Run Valgrind Memcheck",
+			"shell": true,
+			"cmd": ["make check-memory-leaks"]
 		}
 	]
 }
