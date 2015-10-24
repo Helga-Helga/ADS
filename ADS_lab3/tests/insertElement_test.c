@@ -14,8 +14,8 @@ void testInsertAtNegativePosition() {
 
 void testInsertAtNULL() {
     struct Element *b = createElement('b');
-    CU_ASSERT_PTR_NULL(insertElement(NULL, b, 0)); 
-    deleteList(b);   
+    CU_ASSERT_EQUAL(insertElement(NULL, b, 0), b);
+    deleteList(b);
 }
 
 void testInsertAtFirstPosition() {
