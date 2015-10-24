@@ -45,6 +45,7 @@ int main() {
         (NULL == CU_add_test(deleteElementSuite, "Delete from NULL", testDeleteFromNULL)) ||
         (NULL == CU_add_test(deleteElementSuite, "Delete from first position", testDeleteFromFirstPosition)) ||
         (NULL == CU_add_test(deleteElementSuite, "Delete from middle position", testDeleteFromMiddlePosition)) ||
+        (NULL == CU_add_test(deleteElementSuite, "Delete from end position", testDeleteFromEndPosition)) ||
         (NULL == CU_add_test(deleteElementSuite, "Delete single element", testDeleteSingleElement)) ||
         0) {
         CU_cleanup_registry();

@@ -11,4 +11,5 @@ void testDeleteFromNegativePosition();
 void testDeleteFromNULL();
 void testDeleteFromFirstPosition();
 void testDeleteFromMiddlePosition();
+void testDeleteFromEndPosition();
 void testDeleteSingleElement();

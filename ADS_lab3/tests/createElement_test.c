@@ -21,4 +21,5 @@ void testCreateElement() {
     CU_ASSERT_EQUAL(elem->data, 'a');
     CU_ASSERT_PTR_NULL(elem->next);
     CU_ASSERT_PTR_NULL(elem->prev);
+    deleteList(elem);
 }
