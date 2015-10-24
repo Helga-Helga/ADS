@@ -13,3 +13,4 @@ void testDeleteFromFirstPosition();
 void testDeleteFromMiddlePosition();
 void testDeleteFromEndPosition();
 void testDeleteSingleElement();
+void testArrayToList();
