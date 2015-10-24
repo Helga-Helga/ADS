@@ -9,7 +9,7 @@ int clean_suite(void) {
 }
 
 int main() {
-    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, deleteElementSuite = NULL;
+    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, deleteElementSuite = NULL, utilsSuite = NULL;
 
     /* Initialize the CUnit test registry */
     if (CUE_SUCCESS != CU_initialize_registry())
@@ -34,6 +34,12 @@ int main() {
         return CU_get_error();
     }
 
+    utilsSuite = CU_add_suite("Utils", init_suite, clean_suite);
+    if (NULL == utilsSuite) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+
     /* Add the tests to the suite */
     if (
     	(NULL == CU_add_test(createElementSuite, "Create element", testCreateElement)) ||
@@ -47,6 +53,7 @@ int main() {
         (NULL == CU_add_test(deleteElementSuite, "Delete from middle position", testDeleteFromMiddlePosition)) ||
         (NULL == CU_add_test(deleteElementSuite, "Delete from end position", testDeleteFromEndPosition)) ||
         (NULL == CU_add_test(deleteElementSuite, "Delete single element", testDeleteSingleElement)) ||
+        (NULL == CU_add_test(utilsSuite, "Array to list", testArrayToList)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();
