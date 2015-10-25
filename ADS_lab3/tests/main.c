@@ -66,6 +66,8 @@ int main() {
         (NULL == CU_add_test(utilsSuite, "NULL to list", testNULLToList)) ||
         (NULL == CU_add_test(utilsSuite, "List to array", testListToArray)) ||
         (NULL == CU_add_test(utilsSuite, "Comparison", testComparison)) ||
+        (NULL == CU_add_test(utilsSuite, "Is word end", testIsWordEnd)) ||
+        (NULL == CU_add_test(utilsSuite, "Count words", testCountWords)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

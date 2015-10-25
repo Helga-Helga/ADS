@@ -39,3 +39,25 @@ int comparison(struct Element* elem1, struct Element* elem2) {
 	} while (elem1 || elem2);
 	return 1;
 }
+
+int isWordEnd(T symbol) {
+	T stopSymbols[] = " .,;\n\t";
+	size_t i = 0;
+	do {
+		if (stopSymbols[i] == symbol) {
+			return 1;
+		}
+	} while (++i < sizeof(stopSymbols));
+	return 0;
+}
+
+size_t countWords(struct Element* elem) {
+	size_t size = 0;
+	while (elem) {
+		if (isWordEnd(elem->data) && elem->prev && !isWordEnd(elem->prev->data)) {
+			size++;
+		}
+		elem = elem->next;
+	}
+	return size;
+}

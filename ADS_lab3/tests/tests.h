@@ -20,3 +20,5 @@ void testArrayToList();
 void testNULLToList();
 void testListToArray();
 void testComparison();
+void testIsWordEnd();
+void testCountWords();

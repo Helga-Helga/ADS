@@ -7,5 +7,7 @@ struct Element* arrayToList(T*, size_t);
 T* listToArray(struct Element*);
 struct Element** split(struct Element*, T);
 int comparison(struct Element*, struct Element*);
+int isWordEnd(T);
+size_t countWords(struct Element*);
 
 #endif	/* UTILS_H */

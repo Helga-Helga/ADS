@@ -41,3 +41,22 @@ void testComparison() {
 	deleteList(elem2);
 	deleteList(elem3);
 }
+
+void testIsWordEnd() {
+	CU_ASSERT_EQUAL(isWordEnd(' '), 1);
+	CU_ASSERT_EQUAL(isWordEnd(0), 1);
+	CU_ASSERT_EQUAL(isWordEnd('a'), 0);
+}
+
+void testCountWords() {
+	struct Element* list = arrayToList("bebe bebe", sizeof("bebe bebe"));
+	CU_ASSERT_EQUAL(countWords(list), 2);
+	deleteList(list);
+	CU_ASSERT_EQUAL(countWords(NULL), 0);
+	list = arrayToList("bebe   bebe", sizeof("bebe   bebe"));
+	CU_ASSERT_EQUAL(countWords(list), 2);
+	deleteList(list);
+	list = arrayToList("bebe, arar... murr	murr;", sizeof("bebe, arar... murr	murr;"));
+	CU_ASSERT_EQUAL(countWords(list), 4);
+	deleteList(list);
+}
