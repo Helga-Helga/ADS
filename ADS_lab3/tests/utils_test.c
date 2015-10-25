@@ -72,3 +72,13 @@ void testCountLetters() {
 	CU_ASSERT_EQUAL(countLetters(word), 0);
 	deleteList(word);
 }
+
+void testCutFirstWord() {
+	struct Element* list = arrayToList("bebe bebe.", sizeof("bebe bebe."));
+	struct Element* sublist = insertElement(cutFirstWord(&list), createElement('\0'), 4);
+	T* word = listToArray(sublist);
+	CU_ASSERT_STRING_EQUAL(word, "bebe");
+	deleteList(list);
+	deleteList(sublist);
+	free(word);
+}

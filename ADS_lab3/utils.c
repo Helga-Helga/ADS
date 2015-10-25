@@ -70,3 +70,23 @@ size_t countLetters(struct Element* elem) {
 	}
 	return counter;
 }
+
+struct Element* cutFirstWord(struct Element** elem) {
+	struct Element* word = NULL;
+	struct Element* curr = *elem;
+	while (isWordEnd(curr->data)) {
+		curr = curr->next;
+	}
+	word = curr;
+	while (!isWordEnd(curr->data)) {
+		curr = curr->next;
+	}
+	if (word != *elem) {
+		word->prev->next = curr;
+		curr->prev = word->prev;
+	}
+	else {
+		*elem = curr;
+	}
+	return word;
+}

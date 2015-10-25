@@ -23,3 +23,4 @@ void testComparison();
 void testIsWordEnd();
 void testCountWords();
 void testCountLetters();
+void testCutFirstWord();
