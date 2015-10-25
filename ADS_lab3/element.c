@@ -103,6 +103,9 @@ int deleteList(struct Element *elem) {
 
 size_t listSize(struct Element* elem) {
     size_t size = 0;
+    if (!elem) {
+        return 0;
+    }
     while (++size && (elem = elem->next)); 
     return size;
 }

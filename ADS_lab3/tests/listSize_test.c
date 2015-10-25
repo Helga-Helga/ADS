@@ -13,3 +13,7 @@ void testSingleElementSize() {
 	struct Element* elem = createElement('a');
 	CU_ASSERT_EQUAL(listSize(elem), 1);
 }
+
+void testNULLSize() {
+	CU_ASSERT_EQUAL(listSize(NULL), 0);
+}
