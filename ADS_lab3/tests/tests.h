@@ -19,3 +19,4 @@ void testNULLSize();
 void testArrayToList();
 void testNULLToList();
 void testListToArray();
+void testComparison();

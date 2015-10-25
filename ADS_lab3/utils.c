@@ -25,3 +25,17 @@ T* listToArray(struct Element* elem) {
 	}
 	return array;
 }
+
+int comparison(struct Element* elem1, struct Element* elem2) {
+	do {
+		if (!elem1 || !elem2) {
+			return 0;
+		}
+		if (elem1->data != elem2->data) {
+			return 0;
+		}
+		elem1 = elem1->next;
+		elem2 = elem2->next;
+	} while (elem1 || elem2);
+	return 1;
+}

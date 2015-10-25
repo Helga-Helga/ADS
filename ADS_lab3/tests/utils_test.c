@@ -29,3 +29,15 @@ void testListToArray() {
 	deleteList(elem);
 	free(array);
 }
+
+void testComparison() {
+	struct Element* elem1 = arrayToList("bebe", 5);
+	struct Element* elem2 = arrayToList("bebe", 5);
+	struct Element* elem3 = arrayToList("mu", 3);
+	CU_ASSERT_EQUAL(comparison(elem1, elem2), 1);
+	CU_ASSERT_EQUAL(comparison(elem1, elem3), 0);
+	CU_ASSERT_EQUAL(comparison(elem2, elem3), 0);
+	deleteList(elem1);
+	deleteList(elem2);
+	deleteList(elem3);
+}
