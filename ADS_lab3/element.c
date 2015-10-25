@@ -22,6 +22,9 @@ int destructElement(struct Element *elem) {
 struct Element* insertElement(struct Element *elem, struct Element *newElem, int position) {
     int i = 0;
     struct Element *curr;
+    if (!newElem) {
+        return elem;
+    }
     if (position < 0) {
         return NULL;
     }
