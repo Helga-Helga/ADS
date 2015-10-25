@@ -9,7 +9,7 @@ int clean_suite(void) {
 }
 
 int main() {
-    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, deleteElementSuite = NULL, utilsSuite = NULL;
+    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, deleteElementSuite = NULL, listSizeSuite = NULL, utilsSuite = NULL;
 
     /* Initialize the CUnit test registry */
     if (CUE_SUCCESS != CU_initialize_registry())
@@ -34,6 +34,12 @@ int main() {
         return CU_get_error();
     }
 
+    listSizeSuite = CU_add_suite("List size", init_suite, clean_suite);
+    if (NULL == listSizeSuite) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+
     utilsSuite = CU_add_suite("Utils", init_suite, clean_suite);
     if (NULL == utilsSuite) {
         CU_cleanup_registry();
@@ -53,6 +59,7 @@ int main() {
         (NULL == CU_add_test(deleteElementSuite, "Delete from middle position", testDeleteFromMiddlePosition)) ||
         (NULL == CU_add_test(deleteElementSuite, "Delete from end position", testDeleteFromEndPosition)) ||
         (NULL == CU_add_test(deleteElementSuite, "Delete single element", testDeleteSingleElement)) ||
+        (NULL == CU_add_test(listSizeSuite, "List size", testListSize)) ||
         (NULL == CU_add_test(utilsSuite, "Array to list", testArrayToList)) ||
         (NULL == CU_add_test(utilsSuite, "NULL to list", testNULLToList)) ||
         0) {
