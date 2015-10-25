@@ -9,7 +9,8 @@ int clean_suite(void) {
 }
 
 int main() {
-    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, deleteElementSuite = NULL, listSizeSuite = NULL, utilsSuite = NULL;
+    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, deleteElementSuite = NULL, 
+              listSizeSuite = NULL, utilsSuite = NULL, tasksSuite = NULL;
 
     /* Initialize the CUnit test registry */
     if (CUE_SUCCESS != CU_initialize_registry())
@@ -46,6 +47,12 @@ int main() {
         return CU_get_error();
     }
 
+    tasksSuite = CU_add_suite("Utils", init_suite, clean_suite);
+    if (NULL == tasksSuite) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+
     /* Add the tests to the suite */
     if (
     	(NULL == CU_add_test(createElementSuite, "Create element", testCreateElement)) ||
@@ -71,6 +78,7 @@ int main() {
         (NULL == CU_add_test(utilsSuite, "Count letters", testCountLetters)) ||
         (NULL == CU_add_test(utilsSuite, "Cut first word", testCutFirstWord)) ||
         (NULL == CU_add_test(utilsSuite, "Left trim", testLtrim)) ||
+        (NULL == CU_add_test(tasksSuite, "Word processing", testWordProcessing)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

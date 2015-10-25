@@ -3,8 +3,8 @@ CC_FLAGS=-Wall
 CUNIT_FLAGS=-lcunit -L/usr/local/lib
 EXECUTABLE=lab3
 TESTS_FOLDER=tests
-TESTS=insertElement_test.c createElement_test.c deleteElement_test.c listSize_test.c utils_test.c main.c
-SOURCES=element.c utils.c
+TESTS=insertElement_test.c createElement_test.c deleteElement_test.c listSize_test.c utils_test.c tasks_test.c main.c
+SOURCES=element.c utils.c tasks.c
 TESTS_SRC=$(TESTS:%=$(TESTS_FOLDER)/%)
 
 all:
