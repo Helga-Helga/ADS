@@ -64,6 +64,7 @@ int main() {
         (NULL == CU_add_test(listSizeSuite, "NULL size", testNULLSize)) ||
         (NULL == CU_add_test(utilsSuite, "Array to list", testArrayToList)) ||
         (NULL == CU_add_test(utilsSuite, "NULL to list", testNULLToList)) ||
+        (NULL == CU_add_test(utilsSuite, "List to array", testListToArray)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

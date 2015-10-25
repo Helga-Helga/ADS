@@ -18,3 +18,4 @@ void testSingleElementSize();
 void testNULLSize();
 void testArrayToList();
 void testNULLToList();
+void testListToArray();

@@ -10,3 +10,18 @@ struct Element* arrayToList(T* source, size_t size) {
 	}
 	return elem;
 }
+
+T* listToArray(struct Element* elem) {
+	if (!elem) {
+		return NULL;
+	}
+	T* array = (T*)malloc(sizeof(T)*listSize(elem));
+	struct Element* curr = elem;
+	size_t i = 0;
+	while (curr) {
+		array[i] = curr->data;
+		curr = curr->next;
+		i++;
+	}
+	return array;
+}
