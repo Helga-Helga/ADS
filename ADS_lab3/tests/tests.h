@@ -14,5 +14,6 @@ void testDeleteFromMiddlePosition();
 void testDeleteFromEndPosition();
 void testDeleteSingleElement();
 void testListSize();
+void testSingleElementSize();
 void testArrayToList();
 void testNULLToList();
