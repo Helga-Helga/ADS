@@ -61,6 +61,7 @@ int main() {
         (NULL == CU_add_test(deleteElementSuite, "Delete single element", testDeleteSingleElement)) ||
         (NULL == CU_add_test(listSizeSuite, "List size", testListSize)) ||
         (NULL == CU_add_test(listSizeSuite, "Single element size", testSingleElementSize)) ||
+        (NULL == CU_add_test(listSizeSuite, "NULL size", testNULLSize)) ||
         (NULL == CU_add_test(utilsSuite, "Array to list", testArrayToList)) ||
         (NULL == CU_add_test(utilsSuite, "NULL to list", testNULLToList)) ||
         0) {
