@@ -24,5 +24,6 @@ int destructElement(struct Element *);
 struct Element* insertElement(struct Element *, struct Element *, int);
 struct Element* deleteElement(struct Element *, int);
 int deleteList(struct Element *);
+size_t listSize(struct Element *);
 
 #endif	/* ELEMENT_H */

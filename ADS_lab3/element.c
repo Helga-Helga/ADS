@@ -100,3 +100,9 @@ int deleteList(struct Element *elem) {
     destructElement(curr);
     return 1;
 }
+
+size_t listSize(struct Element* elem) {
+    size_t size = 0;
+    while (++size && (elem = elem->next)); 
+    return size;
+}
