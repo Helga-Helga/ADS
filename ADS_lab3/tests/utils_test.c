@@ -82,3 +82,18 @@ void testCutFirstWord() {
 	deleteList(sublist);
 	free(word);
 }
+
+void testLtrim() {
+	struct Element* list = arrayToList("    ", sizeof("    "));
+	CU_ASSERT_PTR_NULL(ltrim(list));
+	list = ltrim(arrayToList("bebe", sizeof("bebe")));
+	T* array = listToArray(list);
+	CU_ASSERT_STRING_EQUAL(array, "bebe");
+	free(array);
+	deleteList(list);
+	list = ltrim(arrayToList(" bebe", sizeof(" bebe")));
+	array = listToArray(list);
+	CU_ASSERT_STRING_EQUAL(array, "bebe");
+	free(array);
+	deleteList(list);
+}

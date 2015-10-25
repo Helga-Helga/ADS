@@ -74,8 +74,11 @@ size_t countLetters(struct Element* elem) {
 struct Element* cutFirstWord(struct Element** elem) {
 	struct Element* word = NULL;
 	struct Element* curr = *elem;
-	while (isWordEnd(curr->data)) {
+	while (curr && isWordEnd(curr->data)) {
 		curr = curr->next;
+	}
+	if (!curr) {
+		return NULL;
 	}
 	word = curr;
 	while (!isWordEnd(curr->data)) {
@@ -90,3 +93,20 @@ struct Element* cutFirstWord(struct Element** elem) {
 	}
 	return word;
 }
+
+struct Element* ltrim(struct Element* elem) {
+	struct Element* curr = elem;
+	while (curr && isWordEnd(curr->data)) {
+		curr = curr->next;
+	}
+	if (elem == curr) {
+		return elem;
+	}
+	if (curr && curr->prev) {
+		curr->prev->next = NULL;
+		curr->prev = NULL;
+	}
+	deleteList(elem);
+	return curr;
+}
+

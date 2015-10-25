@@ -70,6 +70,7 @@ int main() {
         (NULL == CU_add_test(utilsSuite, "Count words", testCountWords)) ||
         (NULL == CU_add_test(utilsSuite, "Count letters", testCountLetters)) ||
         (NULL == CU_add_test(utilsSuite, "Cut first word", testCutFirstWord)) ||
+        (NULL == CU_add_test(utilsSuite, "Left trim", testLtrim)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

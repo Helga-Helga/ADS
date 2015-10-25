@@ -11,5 +11,6 @@ int isWordEnd(T);
 size_t countWords(struct Element*);
 size_t countLetters(struct Element*);
 struct Element* cutFirstWord(struct Element**);
+struct Element* ltrim(struct Element*);
 
 #endif	/* UTILS_H */

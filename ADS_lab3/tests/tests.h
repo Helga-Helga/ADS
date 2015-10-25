@@ -24,3 +24,4 @@ void testIsWordEnd();
 void testCountWords();
 void testCountLetters();
 void testCutFirstWord();
+void testLtrim();
