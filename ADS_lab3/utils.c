@@ -61,3 +61,12 @@ size_t countWords(struct Element* elem) {
 	}
 	return size;
 }
+
+size_t countLetters(struct Element* elem) {
+	size_t counter = 0;
+	while (!isWordEnd(elem->data)) {
+		counter++;
+		elem = elem->next;
+	}
+	return counter;
+}

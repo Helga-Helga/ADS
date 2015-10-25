@@ -68,6 +68,7 @@ int main() {
         (NULL == CU_add_test(utilsSuite, "Comparison", testComparison)) ||
         (NULL == CU_add_test(utilsSuite, "Is word end", testIsWordEnd)) ||
         (NULL == CU_add_test(utilsSuite, "Count words", testCountWords)) ||
+        (NULL == CU_add_test(utilsSuite, "Count letters", testCountLetters)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

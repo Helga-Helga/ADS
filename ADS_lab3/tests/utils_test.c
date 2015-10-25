@@ -60,3 +60,15 @@ void testCountWords() {
 	CU_ASSERT_EQUAL(countWords(list), 4);
 	deleteList(list);
 }
+
+void testCountLetters() {
+	struct Element* word = arrayToList("bebe", sizeof("bebe"));
+	CU_ASSERT_EQUAL(countLetters(word), 4);
+	deleteList(word);
+	word = arrayToList("arr. ", sizeof("arr. "));
+	CU_ASSERT_EQUAL(countLetters(word), 3);
+	deleteList(word);
+	word = arrayToList(" bebe", sizeof(" bebe"));
+	CU_ASSERT_EQUAL(countLetters(word), 0);
+	deleteList(word);
+}

@@ -9,5 +9,6 @@ struct Element** split(struct Element*, T);
 int comparison(struct Element*, struct Element*);
 int isWordEnd(T);
 size_t countWords(struct Element*);
+size_t countLetters(struct Element*);
 
 #endif	/* UTILS_H */
