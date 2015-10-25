@@ -26,3 +26,4 @@ void testCountLetters();
 void testCutFirstWord();
 void testLtrim();
 void testWordProcessing();
+void testTextProcessing();

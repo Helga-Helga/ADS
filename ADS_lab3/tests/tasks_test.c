@@ -18,3 +18,12 @@ void testWordProcessing() {
 	deleteList(word);
 	free(array);
 }
+
+void testTextProcessing() {
+	struct Element* text = arrayToList("bebe bebebe", sizeof("bebe bebebe"));
+	struct Element* result = textProcessing(text);
+	T* array = listToArray(result);
+	CU_ASSERT_STRING_EQUAL(array, "bbebebe");
+	deleteList(result);
+	free(array);
+}

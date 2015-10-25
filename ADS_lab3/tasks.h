@@ -5,5 +5,6 @@
 #include "utils.h"
 
 struct Element* wordProcessing(struct Element*);
+struct Element* textProcessing(struct Element*);
 
 #endif

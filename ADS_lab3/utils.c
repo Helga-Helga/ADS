@@ -64,6 +64,9 @@ size_t countWords(struct Element* elem) {
 
 size_t countLetters(struct Element* elem) {
 	size_t counter = 0;
+	if (!elem) {
+		return 0;
+	}
 	while (!isWordEnd(elem->data)) {
 		counter++;
 		elem = elem->next;
@@ -110,3 +113,22 @@ struct Element* ltrim(struct Element* elem) {
 	return curr;
 }
 
+struct Element* rtrim(struct Element* elem) {
+	struct Element* curr = elem;
+	if (!curr) {
+		return NULL;
+	}
+	while (curr->next) {
+		curr = curr->next;
+	}
+	while(curr->prev && isWordEnd(curr->data)) {
+		curr = curr->prev;
+	}
+	if (curr->next) {
+		deleteList(curr->next);
+	}
+	if (!isWordEnd(curr->data)) {
+		return elem;
+	}
+	return NULL;
+}
