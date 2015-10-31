@@ -75,11 +75,20 @@ void testCountLetters() {
 
 void testCutFirstWord() {
 	struct Element* list = arrayToList("bebe bebe.", sizeof("bebe bebe."));
-	struct Element* sublist = insertElement(cutFirstWord(&list), createElement('\0'), 4);
+	list = ltrim(list);
+	struct Element* firstWord = cutFirstWord(&list);
+	struct Element* finalElement = createElement('\0');
+	struct Element* sublist = insertElement(firstWord, finalElement, listSize(firstWord));
 	T* word = listToArray(sublist);
+	T* array = listToArray(list);
 	CU_ASSERT_STRING_EQUAL(word, "bebe");
+	CU_ASSERT_STRING_EQUAL(array, " bebe.");
+	//printf("%d %d\n", finalElement->prev, finalElement);
+	
 	deleteList(list);
 	deleteList(sublist);
+	//deleteList(finalElement);
+	free(array);
 	free(word);
 }
 

@@ -27,3 +27,4 @@ void testCutFirstWord();
 void testLtrim();
 void testWordProcessing();
 void testTextProcessing();
+void testAdvancedTextProcessing();

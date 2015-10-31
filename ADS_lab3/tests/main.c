@@ -47,7 +47,7 @@ int main() {
         return CU_get_error();
     }
 
-    tasksSuite = CU_add_suite("Utils", init_suite, clean_suite);
+    tasksSuite = CU_add_suite("Tasks", init_suite, clean_suite);
     if (NULL == tasksSuite) {
         CU_cleanup_registry();
         return CU_get_error();
@@ -80,6 +80,7 @@ int main() {
         (NULL == CU_add_test(utilsSuite, "Left trim", testLtrim)) ||
         (NULL == CU_add_test(tasksSuite, "Word processing", testWordProcessing)) ||
         (NULL == CU_add_test(tasksSuite, "Text processing", testTextProcessing)) ||
+        (NULL == CU_add_test(tasksSuite, "Advanced text processing", testAdvancedTextProcessing)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

@@ -67,7 +67,7 @@ size_t countLetters(struct Element* elem) {
 	if (!elem) {
 		return 0;
 	}
-	while (!isWordEnd(elem->data)) {
+	while (elem && !isWordEnd(elem->data)) {
 		counter++;
 		elem = elem->next;
 	}
@@ -84,16 +84,20 @@ struct Element* cutFirstWord(struct Element** elem) {
 		return NULL;
 	}
 	word = curr;
-	while (!isWordEnd(curr->data)) {
+	while (curr->next && !isWordEnd(curr->next->data)) {
 		curr = curr->next;
 	}
-	if (word != *elem) {
-		word->prev->next = curr;
-		curr->prev = word->prev;
+	if (curr->next) {
+		curr->next->prev = word->prev;
+	}
+	if (word == *elem) {
+		*elem = curr->next;
 	}
 	else {
-		*elem = curr;
+		word->prev->next = curr->next;
 	}
+	word->prev = NULL;
+	curr->next = NULL;
 	return word;
 }
 
@@ -102,10 +106,14 @@ struct Element* ltrim(struct Element* elem) {
 	while (curr && isWordEnd(curr->data)) {
 		curr = curr->next;
 	}
+	if (!curr) {
+		deleteList(elem);
+		return NULL;
+	}
 	if (elem == curr) {
 		return elem;
 	}
-	if (curr && curr->prev) {
+	if (curr) {
 		curr->prev->next = NULL;
 		curr->prev = NULL;
 	}
@@ -121,14 +129,13 @@ struct Element* rtrim(struct Element* elem) {
 	while (curr->next) {
 		curr = curr->next;
 	}
-	while(curr->prev && isWordEnd(curr->data)) {
+	while (curr->prev && isWordEnd(curr->data)) {
 		curr = curr->prev;
 	}
-	if (curr->next) {
-		deleteList(curr->next);
-	}
 	if (!isWordEnd(curr->data)) {
+		deleteList(curr->next);
 		return elem;
 	}
+	deleteList(curr);
 	return NULL;
 }

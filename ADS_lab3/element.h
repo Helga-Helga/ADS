@@ -21,8 +21,8 @@ struct Element{
 
 struct Element* createElement(T);
 int destructElement(struct Element *);
-struct Element* insertElement(struct Element *, struct Element *, int);
-struct Element* deleteElement(struct Element *, int);
+struct Element* insertElement(struct Element *, struct Element *, size_t);
+struct Element* deleteElement(struct Element *, size_t);
 int deleteList(struct Element *);
 size_t listSize(struct Element *);
 

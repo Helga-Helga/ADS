@@ -6,7 +6,11 @@ struct Element* wordProcessing(struct Element* word) {
 	}
 	size_t counter = countLetters(word);
 	struct Element* curr = word;
-	if (counter&1) {
+	if (counter == 1) {
+		deleteList(word);
+		return NULL;
+	}
+	else if (counter&1) {
 		while (--counter) {
 			curr = curr->next;
 		}
@@ -14,7 +18,7 @@ struct Element* wordProcessing(struct Element* word) {
 		return word;
 	}
 	else {
-		return insertElement(curr, createElement(curr->data), 1);
+		return insertElement(curr, createElement(curr->data), 0);
 	}
 }
 
@@ -23,22 +27,23 @@ struct Element* textProcessing(struct Element* text) {
 		deleteList(text);
 		return NULL;
 	}
-	text = ltrim(text);
-	struct Element* curr = NULL;
 	struct Element* first = cutFirstWord(&text);
+	struct Element* curr = cutFirstWord(&text);
 	struct Element* end = NULL;
-	while (text) {
+	while (curr) {
 		text = ltrim(text);
-		curr = cutFirstWord(&text);
 		if (!comparison(first, curr)) {
 			end = insertElement(end, createElement(' '), listSize(end));
-			insertElement(end, wordProcessing(curr), listSize(end));
+			curr = wordProcessing(curr);
+			end = insertElement(end, curr, listSize(end));
 		}
 		else {
 			deleteList(curr);
 		}
+		curr = cutFirstWord(&text);
 	}
 	deleteList(first);
+	deleteList(text);
 	end = rtrim(ltrim(end));
 	end = insertElement(end, createElement('\0'), listSize(end));
 	return end;

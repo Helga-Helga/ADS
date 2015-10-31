@@ -1,29 +1,41 @@
 {
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"make build-tests"
+			],
+			"name": "Make - Tests",
+			"shell": true,
+			"working_dir": "${project_path:${folder}}"
+		},
+		{
+			"cmd":
+			[
+				"make run-tests"
+			],
+			"name": "Make - Run Tests",
+			"shell": true,
+			"working_dir": "${project_path:${folder}}"
+		},
+		{
+			"cmd":
+			[
+				"make check-memory-leaks"
+			],
+			"name": "Make - Run Valgrind Memcheck",
+			"shell": true,
+			"working_dir": "${project_path:${folder}}"
+		}
+	],
 	"folders":
 	[
 		{
 			"path": "."
-		}
-	],
-	"build_systems":
-	[
-		{
-			"working_dir": "${project_path:${folder}}",
-			"name": "Make - Tests",
-			"shell": true,
-			"cmd": ["make build-tests"]
 		},
 		{
-			"working_dir": "${project_path:${folder}}",
-			"name": "Make - Run Tests",
-			"shell": true,
-			"cmd": ["make run-tests"]
-		},
-		{
-			"working_dir": "${project_path:${folder}}",
-			"name": "Make - Run Valgrind Memcheck",
-			"shell": true,
-			"cmd": ["make check-memory-leaks"]
+			"path": "/home/olya/lab_php"
 		}
 	]
 }

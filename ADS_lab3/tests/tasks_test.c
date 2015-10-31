@@ -8,12 +8,12 @@
 
 void testWordProcessing() {
 	struct Element* word = arrayToList("bebe", sizeof("bebe"));
-	T* array = listToArray(wordProcessing(word));
+	T* array = listToArray(word=wordProcessing(word));
 	CU_ASSERT_STRING_EQUAL(array, "bbebe");
 	deleteList(word);
 	free(array);
 	word = arrayToList("muu", sizeof("muu"));
-	array = listToArray(wordProcessing(word));
+	array = listToArray(word=wordProcessing(word));
 	CU_ASSERT_STRING_EQUAL(array, "mu");
 	deleteList(word);
 	free(array);
@@ -24,6 +24,16 @@ void testTextProcessing() {
 	struct Element* result = textProcessing(text);
 	T* array = listToArray(result);
 	CU_ASSERT_STRING_EQUAL(array, "bbebebe");
+	deleteList(result);
+	free(array);
+}
+
+void testAdvancedTextProcessing() {
+	char txt[] = "a abc a ab b";
+	struct Element* text = arrayToList(txt, sizeof(txt));
+	struct Element* result = textProcessing(text);
+	T* array = listToArray(result);
+	CU_ASSERT_STRING_EQUAL(array, "ab aab");
 	deleteList(result);
 	free(array);
 }
