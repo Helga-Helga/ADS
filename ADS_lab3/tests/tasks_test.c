@@ -37,3 +37,14 @@ void testAdvancedTextProcessing() {
 	deleteList(result);
 	free(array);
 }
+
+void testLoremIpsumProcessing() {
+	char txt[] = "Lorem ipsum dolor sit amet, Lorem consectetur adipiscing elit. Integer elit. Lorem";
+	struct Element* text = arrayToList(txt, sizeof(txt));
+	struct Element* result = textProcessing(text);
+	T* array = listToArray(result);
+	printf("'%s'\n", array);
+	CU_ASSERT_STRING_EQUAL(array, "ipsu dolo si aamet consectetu aadipiscing eelit Intege eelit");
+	deleteList(result);
+	free(array);
+}

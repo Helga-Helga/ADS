@@ -28,3 +28,4 @@ void testLtrim();
 void testWordProcessing();
 void testTextProcessing();
 void testAdvancedTextProcessing();
+void testLoremIpsumProcessing();

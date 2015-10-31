@@ -81,6 +81,7 @@ int main() {
         (NULL == CU_add_test(tasksSuite, "Word processing", testWordProcessing)) ||
         (NULL == CU_add_test(tasksSuite, "Text processing", testTextProcessing)) ||
         (NULL == CU_add_test(tasksSuite, "Advanced text processing", testAdvancedTextProcessing)) ||
+        (NULL == CU_add_test(tasksSuite, "Lorem Ipsum  processing", testLoremIpsumProcessing)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();
