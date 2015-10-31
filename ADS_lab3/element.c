@@ -97,7 +97,6 @@ int deleteList(struct Element *elem) {
         curr = curr->next;
         destructElement(curr->prev);
     }
-    //printf("%d %d\n", curr, curr->next);
     destructElement(curr);
     return 1;
 }
