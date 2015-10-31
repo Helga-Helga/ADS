@@ -19,3 +19,7 @@ void testSingleElementSize() {
 void testNULLSize() {
 	CU_ASSERT_EQUAL(listSize(NULL), 0);
 }
+
+void testNULLSize() {
+	CU_ASSERT_EQUAL(listSize(NULL), 0);
+}
