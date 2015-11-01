@@ -1,5 +1,5 @@
 CC=gcc
-CC_FLAGS=-Wall
+CC_FLAGS=-Wall -g
 CUNIT_FLAGS=-lcunit -L/usr/local/lib
 EXECUTABLE=lab3
 TESTS_FOLDER=tests
