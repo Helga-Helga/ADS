@@ -35,7 +35,7 @@ struct Element* textProcessing(struct Element* text) {
 		if (!comparison(first, curr)) {
 			end = insertElement(end, createElement(' '), listSize(end));
 			curr = wordProcessing(curr);
-			end = insertElement(end, curr, listSize(end));
+			end = rtrim(insertElement(end, curr, listSize(end)));
 		}
 		else {
 			deleteList(curr);
@@ -52,8 +52,9 @@ struct Element* textProcessing(struct Element* text) {
 int printList(struct Element* text) {
 	struct Element* curr = text;
 	while (curr && curr->data != 0) {
-		printf("%s\n", curr->data);
+		printf("%c", curr->data);
 		curr = curr->next;
 	}
+	printf("\n");
 	return 0;
 }
