@@ -48,3 +48,12 @@ struct Element* textProcessing(struct Element* text) {
 	end = insertElement(end, createElement('\0'), listSize(end));
 	return end;
 }
+
+int printList(struct Element* text) {
+	struct Element* curr = text;
+	while (curr && curr->data != 0) {
+		printf("%s\n", curr->data);
+		curr = curr->next;
+	}
+	return 0;
+}

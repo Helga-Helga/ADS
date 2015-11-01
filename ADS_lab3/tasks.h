@@ -6,5 +6,6 @@
 
 struct Element* wordProcessing(struct Element*);
 struct Element* textProcessing(struct Element*);
+int printList(struct Element*);
 
 #endif
