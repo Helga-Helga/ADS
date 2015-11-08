@@ -15,3 +15,31 @@ size_t countWordsArray(T* array) {
 	}
 	return size;
 }
+
+size_t wordlen(T* word) {
+	if (!word) {
+		return 0;
+	}
+	size_t i = 0;
+	while (!isWordEnd(word[i++]));
+	return i-1;
+}
+
+int cmpWithFirstWord(T* firstWord, T* word) {
+	size_t i = 0, j = 0;
+	if (!word) {
+		return 0;
+	}
+	if (wordlen(firstWord) != wordlen(word)) {
+		return 0;
+	}
+	if (word[i] != firstWord[j]) {
+		return 0;
+	}
+	while (!isWordEnd(word[++i]) && !isWordEnd(firstWord[++j])) {
+		if (word[i] != firstWord[j]) {
+			return 0;
+		}
+	}
+	return 1;
+}

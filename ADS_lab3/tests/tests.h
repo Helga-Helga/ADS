@@ -30,3 +30,5 @@ void testTextProcessing();
 void testAdvancedTextProcessing();
 void testLoremIpsumProcessing();
 void testCountWordsArray();
+void testWordlen();
+void testCmpWithFirstWord();

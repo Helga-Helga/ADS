@@ -89,6 +89,8 @@ int main() {
         (NULL == CU_add_test(tasksSuite, "Advanced text processing", testAdvancedTextProcessing)) ||
         (NULL == CU_add_test(tasksSuite, "Lorem Ipsum  processing", testLoremIpsumProcessing)) ||
         (NULL == CU_add_test(tasks_arraySuite, "Count words array", testCountWordsArray)) ||
+        (NULL == CU_add_test(tasks_arraySuite, "Word length", testWordlen)) ||
+        (NULL == CU_add_test(tasks_arraySuite, "Comparison with first word", testCmpWithFirstWord)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();
