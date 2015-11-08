@@ -58,4 +58,6 @@ void testFindNextWord() {
 	CU_ASSERT_STRING_EQUAL(findNextWord(text), "be");
 	text = "bebe be be";
 	CU_ASSERT_STRING_EQUAL(findNextWord(text), "be be");
+	text = " bebe be";
+	CU_ASSERT_STRING_EQUAL(findNextWord(text), "bebe be");
 }
