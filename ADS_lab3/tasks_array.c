@@ -110,7 +110,7 @@ T* arrayProcessing(T* array) {
 			continue;
 		}
 		else {
-			if (dstEnd != dst && *dstEnd != ' ') {
+			if (dstEnd != dst && *dstEnd != ' ' && *(dstEnd-1) != ' ') {
 				*(dstEnd++) = ' ';
 			}
 			dstEnd = wordProcessingArray(curr, dstEnd, wordlen(curr));

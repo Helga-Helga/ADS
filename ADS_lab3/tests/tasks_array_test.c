@@ -111,4 +111,8 @@ void testArrayProcessing() {
 	dst = arrayProcessing(array);
 	CU_ASSERT_STRING_EQUAL(dst, "ipsu dolo si aamet consectetu aadipiscing eelit Intege eelit");
 	free(dst);
+	array = "bebe be bee b beb.";
+	dst = arrayProcessing(array);
+	CU_ASSERT_STRING_EQUAL(dst, "bbe be be");
+	free(dst);
 }

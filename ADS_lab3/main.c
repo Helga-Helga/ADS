@@ -11,6 +11,7 @@
 #include "element.h"
 #include "tasks.h"
 #include "utils.h"
+#include "tasks_array.h"
 
 /*
  * 
@@ -26,6 +27,12 @@ int main(int argc, char** argv) {
 		printf("Text processed:\n");
 		printList(text);
 		deleteList(text);
+		return (EXIT_SUCCESS);
+	}
+	else if (strcmp(argv[1], "array") == 0) {
+		T* text = arrayProcessing(argv[2]);
+		printf("Text processed:\n%s\n", text);
+		free(text);
 		return (EXIT_SUCCESS);
 	}
 	return (EXIT_FAILURE);
