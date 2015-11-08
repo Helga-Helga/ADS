@@ -94,6 +94,8 @@ int main() {
         (NULL == CU_add_test(tasks_arraySuite, "Find next word", testFindNextWord)) ||
         (NULL == CU_add_test(tasks_arraySuite, "Find first word", testFindFirstWord)) ||
         (NULL == CU_add_test(tasks_arraySuite, "Word processign array", testWordProcessingArray)) ||
+        (NULL == CU_add_test(tasks_arraySuite, "Destination array length", testDstLen)) ||
+        (NULL == CU_add_test(tasks_arraySuite, "Array processing", testArrayProcessing)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

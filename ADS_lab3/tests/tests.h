@@ -35,3 +35,5 @@ void testCmpWithFirstWord();
 void testFindNextWord();
 void testFindFirstWord();
 void testWordProcessingArray();
+void testDstLen();
+void testArrayProcessing();

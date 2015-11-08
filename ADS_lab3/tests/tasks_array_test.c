@@ -92,3 +92,23 @@ void testWordProcessingArray() {
 	*wordProcessingArray(src, dst, 3) = 0;
 	CU_ASSERT_STRING_EQUAL(dst, "be");
 }
+
+void testDstLen() {
+	CU_ASSERT_EQUAL(dstlen(0), 1);
+	CU_ASSERT_TRUE(dstlen(strlen("a ab ab")) > strlen("aab aab"));
+}
+
+void testArrayProcessing() {
+	T* array = "bebe bebebe";
+	T* dst = arrayProcessing(array);
+	CU_ASSERT_STRING_EQUAL(dst, "bbebebe");
+	free(dst);
+	array = "a abc a ab b";
+	dst = arrayProcessing(array);
+	CU_ASSERT_STRING_EQUAL(dst, "ab aab");
+	free(dst);
+	array = "Lorem ipsum dolor sit amet, Lorem consectetur adipiscing elit. Integer elit. Lorem";
+	dst = arrayProcessing(array);
+	CU_ASSERT_STRING_EQUAL(dst, "ipsu dolo si aamet consectetu aadipiscing eelit Intege eelit");
+	free(dst);
+}
