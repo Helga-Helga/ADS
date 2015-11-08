@@ -8,5 +8,6 @@ size_t wordlen(T*);
 int cmpWithFirstWord(T*, T*);
 T* findNextWord(T*);
 T* findFirstWord(T*);
+T* wordProcessingArray(T*, T*, size_t);
 
 #endif

@@ -69,3 +69,21 @@ T* findFirstWord(T* text) {
 		return findNextWord(text);
 	}
 }
+
+T* wordProcessingArray(T* source, T* destination, size_t len) {
+	if (!source || !*source || len < 2) {
+		return destination;
+	}
+	if (len&1) {
+		while(!isWordEnd(source[1])) {
+			*(destination++) = *(source++);
+		}
+	}
+	else{
+		*(destination++) = *(source);
+		while(!isWordEnd(*source)) {
+			*(destination++) = *(source++);
+		}
+	}
+	return destination;
+}

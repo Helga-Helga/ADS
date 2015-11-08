@@ -74,3 +74,21 @@ void testFindFirstWord() {
 	text = " bebe be";
 	CU_ASSERT_STRING_EQUAL(findFirstWord(text), "bebe be");
 }
+
+void testWordProcessingArray() {
+	T *src = NULL;
+	T dst[80];
+	CU_ASSERT_EQUAL(wordProcessingArray(src, dst, 0), dst);
+	src = "";
+	CU_ASSERT_EQUAL(wordProcessingArray(src, dst, 0), dst);
+	src = " ";
+	CU_ASSERT_EQUAL(wordProcessingArray(src, dst, 0), dst);
+	src = "b";
+	CU_ASSERT_EQUAL(wordProcessingArray(src, dst, 1), dst);
+	src = "be";
+	*wordProcessingArray(src, dst, 2) = 0;
+	CU_ASSERT_STRING_EQUAL(dst, "bbe");
+	src = "beb";
+	*wordProcessingArray(src, dst, 3) = 0;
+	CU_ASSERT_STRING_EQUAL(dst, "be");
+}
