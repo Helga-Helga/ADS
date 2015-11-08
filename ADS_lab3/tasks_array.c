@@ -57,3 +57,15 @@ T* findNextWord(T* text) {
 	}
 	return text;
 }
+
+T* findFirstWord(T* text) {
+	if (!text || !*text) {
+		return NULL;
+	}
+	if (!isWordEnd(*text)) {
+		return text;
+	}
+	else {
+		return findNextWord(text);
+	}
+}

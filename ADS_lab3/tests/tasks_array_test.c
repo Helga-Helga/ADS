@@ -61,3 +61,16 @@ void testFindNextWord() {
 	text = " bebe be";
 	CU_ASSERT_STRING_EQUAL(findNextWord(text), "bebe be");
 }
+
+void testFindFirstWord() {
+	T* text = NULL;
+	CU_ASSERT_PTR_NULL(findFirstWord(text));
+	text = "";
+	CU_ASSERT_PTR_NULL(findFirstWord(text));
+	text = " ..; ";
+	CU_ASSERT_PTR_NULL(findFirstWord(text));
+	text = "bebe";
+	CU_ASSERT_STRING_EQUAL(findFirstWord(text), "bebe");
+	text = " bebe be";
+	CU_ASSERT_STRING_EQUAL(findFirstWord(text), "bebe be");
+}
