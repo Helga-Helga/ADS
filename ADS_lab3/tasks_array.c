@@ -110,10 +110,13 @@ T* arrayProcessing(T* array) {
 			continue;
 		}
 		else {
-			if (dstEnd != dst && *dstEnd != ' ' && *(dstEnd-1) != ' ') {
+			if (dstEnd != dst && *dstEnd != ' ') {
 				*(dstEnd++) = ' ';
 			}
 			dstEnd = wordProcessingArray(curr, dstEnd, wordlen(curr));
+			if (dstEnd != dst && *(dstEnd-1) == ' ') {
+				dstEnd--;
+			}
 			*dstEnd = 0;
 		}
 		curr = findNextWord(curr);
