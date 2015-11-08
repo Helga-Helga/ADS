@@ -29,3 +29,4 @@ void testWordProcessing();
 void testTextProcessing();
 void testAdvancedTextProcessing();
 void testLoremIpsumProcessing();
+void testCountWordsArray();
