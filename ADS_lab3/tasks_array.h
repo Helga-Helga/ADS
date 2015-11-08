@@ -6,5 +6,6 @@
 size_t countWordsArray(T*);
 size_t wordlen(T*);
 int cmpWithFirstWord(T*, T*);
+T* findNextWord(T*);
 
 #endif

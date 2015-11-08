@@ -91,6 +91,7 @@ int main() {
         (NULL == CU_add_test(tasks_arraySuite, "Count words array", testCountWordsArray)) ||
         (NULL == CU_add_test(tasks_arraySuite, "Word length", testWordlen)) ||
         (NULL == CU_add_test(tasks_arraySuite, "Comparison with first word", testCmpWithFirstWord)) ||
+        (NULL == CU_add_test(tasks_arraySuite, "Find next word", testFindNextWord)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

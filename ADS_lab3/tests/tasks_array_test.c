@@ -46,3 +46,16 @@ void testCmpWithFirstWord() {
 	word = "bebe     fe fefe";
 	CU_ASSERT_EQUAL(cmpWithFirstWord(firstWord, word), 1);
 }
+
+void testFindNextWord() {
+	T* text = NULL;
+	CU_ASSERT_PTR_NULL(findNextWord(text));
+	text = "";
+	CU_ASSERT_PTR_NULL(findNextWord(text));
+	text = "bebe";
+	CU_ASSERT_PTR_NULL(findNextWord(text));
+	text = "bebe be";
+	CU_ASSERT_STRING_EQUAL(findNextWord(text), "be");
+	text = "bebe be be";
+	CU_ASSERT_STRING_EQUAL(findNextWord(text), "be be");
+}

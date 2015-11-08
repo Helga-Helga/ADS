@@ -43,3 +43,17 @@ int cmpWithFirstWord(T* firstWord, T* word) {
 	}
 	return 1;
 }
+
+T* findNextWord(T* text) {
+	if (!text || !*text) {
+		return NULL;
+	}
+	while(!isWordEnd(*(text++)));
+	while(isWordEnd(*(text))) {
+		if (!*text) {
+			return NULL;
+		}
+		text++;
+	}
+	return text;
+}

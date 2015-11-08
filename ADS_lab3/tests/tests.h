@@ -32,3 +32,4 @@ void testLoremIpsumProcessing();
 void testCountWordsArray();
 void testWordlen();
 void testCmpWithFirstWord();
+void testFindNextWord();
