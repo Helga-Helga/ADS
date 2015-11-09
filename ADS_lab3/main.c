@@ -23,10 +23,11 @@ int main(int argc, char** argv) {
 	}
 	else if (strcmp(argv[1], "list") == 0) {
 		struct Element* text = arrayToList(argv[2], strlen(argv[2]));
+		text = textProcessing(text);
 		if (!text) {
 			perror("The string mush contain at least two words\n");
+			return (EXIT_FAILURE);
 		}
-		text = textProcessing(text);
 		printf("Text processed:\n");
 		printList(text);
 		deleteList(text);
@@ -36,6 +37,7 @@ int main(int argc, char** argv) {
 		T* text = arrayProcessing(argv[2]);
 		if (!text) {
 			perror("The string mush contain at least two words\n");
+			return (EXIT_FAILURE);
 		}
 		printf("Text processed:\n%s\n", text);
 		free(text);
