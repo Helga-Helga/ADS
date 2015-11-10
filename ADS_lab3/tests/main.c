@@ -9,8 +9,8 @@ int clean_suite(void) {
 }
 
 int main() {
-    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, deleteElementSuite = NULL, 
-              listSizeSuite = NULL, utilsSuite = NULL, tasksSuite = NULL, tasks_arraySuite;
+    CU_pSuite insertElementSuite = NULL, createElementSuite = NULL, listSizeSuite = NULL, utilsSuite = NULL, 
+    tasksSuite = NULL, tasks_arraySuite;
 
     /* Initialize the CUnit test registry */
     if (CUE_SUCCESS != CU_initialize_registry())
@@ -25,12 +25,6 @@ int main() {
 
     createElementSuite = CU_add_suite("Create element", init_suite, clean_suite);
     if (NULL == createElementSuite) {
-        CU_cleanup_registry();
-        return CU_get_error();
-    }
-
-    deleteElementSuite = CU_add_suite("Delete element", init_suite, clean_suite);
-    if (NULL == deleteElementSuite) {
         CU_cleanup_registry();
         return CU_get_error();
     }
@@ -66,12 +60,6 @@ int main() {
         (NULL == CU_add_test(insertElementSuite, "Insert at NULL", testInsertAtNULL)) ||
         (NULL == CU_add_test(insertElementSuite, "Insert at first posiition", testInsertAtFirstPosition)) ||
         (NULL == CU_add_test(insertElementSuite, "Insert at middle position", testInsertAtMiddlePosition)) ||
-        (NULL == CU_add_test(deleteElementSuite, "Delete from negative position", testDeleteFromNegativePosition)) ||
-        (NULL == CU_add_test(deleteElementSuite, "Delete from NULL", testDeleteFromNULL)) ||
-        (NULL == CU_add_test(deleteElementSuite, "Delete from first position", testDeleteFromFirstPosition)) ||
-        (NULL == CU_add_test(deleteElementSuite, "Delete from middle position", testDeleteFromMiddlePosition)) ||
-        (NULL == CU_add_test(deleteElementSuite, "Delete from end position", testDeleteFromEndPosition)) ||
-        (NULL == CU_add_test(deleteElementSuite, "Delete single element", testDeleteSingleElement)) ||
         (NULL == CU_add_test(listSizeSuite, "List size", testListSize)) ||
         (NULL == CU_add_test(listSizeSuite, "Single element size", testSingleElementSize)) ||
         (NULL == CU_add_test(listSizeSuite, "NULL size", testNULLSize)) ||

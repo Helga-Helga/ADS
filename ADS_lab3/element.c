@@ -55,38 +55,6 @@ struct Element* insertElement(struct Element *elem, struct Element *newElem, siz
     return elem;
 }
 
-struct Element* deleteElement(struct Element *elem, size_t position) {
-    struct Element *head;
-    struct Element *curr;
-    size_t i = 0;
-    head = elem;
-    if (elem == NULL) {
-        return NULL;
-    }
-    else if (!elem->next && position == 0){
-        return NULL;
-    }
-    else if (position == 0) {
-        head = elem->next;
-        destructElement(elem);
-        head->prev = NULL;
-        return head;
-    }
-    curr = elem;
-    while (i++ < position) {
-        curr = curr->next;
-        if (!curr) {
-            return NULL;
-        }
-    }
-    if (curr->next) {
-        curr->next->prev = curr->prev;
-    }  
-    curr->prev->next = curr->next;
-    destructElement(curr);
-    return head;
-}
-
 int deleteList(struct Element *elem) {
     struct Element *curr;
     if (!elem) {
