@@ -127,3 +127,25 @@ T* arrayProcessing(T* array) {
 	}
 	return (T*)realloc(dst, (strlen(dst)+1)*sizeof(T));
 }
+
+T* deleteEverySecondWord(T* text) {
+	text = findFirstWord(text);
+	if (!text) {
+		return NULL;
+	}
+	T* result = (T*)malloc((strlen(text)+1)*sizeof(T));
+	int i = 0, j = 0, isEven = 0;
+	do {
+		if (isEven == 0) {
+			result[j] = text[i];
+			j++;
+		}
+		if (i > 0 && isWordEnd(text[i]) && !isWordEnd(text[i-1])) {
+			isEven ^= 1;
+		}
+	} while (i++ < strlen(text));
+	if (j > 0 && result[j-1]) {
+		result[++j] = 0;
+	}
+	return (T*)realloc(result, (j+1)*sizeof(T));
+}

@@ -74,6 +74,7 @@ int main() {
         (NULL == CU_add_test(utilsSuite, "Left trim", testLtrim)) ||
         (NULL == CU_add_test(tasksSuite, "Word processing", testWordProcessing)) ||
         (NULL == CU_add_test(tasksSuite, "Text processing", testTextProcessing)) ||
+        (NULL == CU_add_test(tasksSuite, "Cut every second word", testCutEverySecondWord)) ||
         (NULL == CU_add_test(tasksSuite, "Advanced text processing", testAdvancedTextProcessing)) ||
         (NULL == CU_add_test(tasksSuite, "Lorem Ipsum  processing", testLoremIpsumProcessing)) ||
         (NULL == CU_add_test(tasks_arraySuite, "Count words array", testCountWordsArray)) ||
@@ -84,6 +85,7 @@ int main() {
         (NULL == CU_add_test(tasks_arraySuite, "Word processign array", testWordProcessingArray)) ||
         (NULL == CU_add_test(tasks_arraySuite, "Destination array length", testDstLen)) ||
         (NULL == CU_add_test(tasks_arraySuite, "Array processing", testArrayProcessing)) ||
+        (NULL == CU_add_test(tasks_arraySuite, "Delete every second word", testDeleteEverySecondWord)) ||
         0) {
         CU_cleanup_registry();
         return CU_get_error();

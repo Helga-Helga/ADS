@@ -58,3 +58,22 @@ int printList(struct Element* text) {
 	printf("\n");
 	return 0;
 }
+
+struct Element* cutEverySecondWord(struct Element* text) {
+	if (!text) {
+		return NULL;
+	}
+	struct Element* curr = text;
+	while (curr) {
+		while (curr && isWordEnd(curr->data)) {
+			curr = curr->next;
+		}
+		while (curr && !isWordEnd(curr->data)) {
+			curr = curr->next;
+		}
+		if (curr) {
+			deleteList(cutFirstWord(&curr));
+		}
+	}
+	return text;
+}

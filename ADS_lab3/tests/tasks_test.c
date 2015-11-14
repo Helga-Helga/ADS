@@ -38,6 +38,15 @@ void testAdvancedTextProcessing() {
 	free(array);
 }
 
+void testCutEverySecondWord() {
+	struct Element* list = arrayToList("bebe be bebe be bebe", sizeof("bebe be bebe be bebe"));
+	list = cutEverySecondWord(list);
+	T* array = listToArray(list);
+	CU_ASSERT_STRING_EQUAL(array, "bebe  bebe  bebe");
+	deleteList(list);
+	free(array);
+}
+
 void testLoremIpsumProcessing() {
 	char txt[] = "Lorem ipsum dolor sit amet, Lorem consectetur adipiscing elit. Integer elit. Lorem";
 	struct Element* text = arrayToList(txt, sizeof(txt));

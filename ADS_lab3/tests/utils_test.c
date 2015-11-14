@@ -83,11 +83,8 @@ void testCutFirstWord() {
 	T* array = listToArray(list);
 	CU_ASSERT_STRING_EQUAL(word, "bebe");
 	CU_ASSERT_STRING_EQUAL(array, " bebe.");
-	//printf("%d %d\n", finalElement->prev, finalElement);
-	
 	deleteList(list);
 	deleteList(sublist);
-	//deleteList(finalElement);
 	free(array);
 	free(word);
 }

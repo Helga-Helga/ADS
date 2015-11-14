@@ -116,3 +116,10 @@ void testArrayProcessing() {
 	CU_ASSERT_STRING_EQUAL(dst, "bbe be be");
 	free(dst);
 }
+
+void testDeleteEverySecondWord() {
+	T* text = "bebe be bebe be bebe";
+	T* array = deleteEverySecondWord(text);
+	CU_ASSERT_STRING_EQUAL(array, "bebe bebe bebe");
+	free(array);
+}
