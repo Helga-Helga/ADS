@@ -12,6 +12,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include "../src/stackArray.hpp"
 #include "../src/queueArray.hpp"
+#include "../src/stackList.hpp"
 
 using namespace CppUnit;
 using namespace std;
@@ -36,10 +37,11 @@ private:
 };
 
 void TestContainer::setUp(void) {
-    this->containersCount = 2;
+    this->containersCount = 3;
     this->containers = new Container<int>*[this->containersCount];
     this->containers[0] = new StackArray<int>();
     this->containers[1] = new QueueArray<int>();
+    this->containers[2] = new StackList<int>();
 }
 
 void TestContainer::tearDown(void) {
