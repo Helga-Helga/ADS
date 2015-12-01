@@ -1,3 +1,4 @@
+#pragma once
 template <class T> class List {
 	private:
 		struct Element {
@@ -18,6 +19,9 @@ template <class T> class List {
 			this->first = this->last = NULL;
 		}
 		~List() {
+			while (this->first) {
+				this->remove();
+			}
 		}
 		void insert(T value, bool isLast) {
 			if (this->first == NULL && this->last == NULL) {
