@@ -1,5 +1,6 @@
 #include "testsContainer.hpp"
 #include "testsList.hpp"
+#include "testsQueueArray.hpp"
 
 using namespace CppUnit;
 using namespace std;
