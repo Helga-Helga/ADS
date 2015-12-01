@@ -1,4 +1,5 @@
 #include "testsContainer.hpp"
+#include "testsList.hpp"
 
 using namespace CppUnit;
 using namespace std;
