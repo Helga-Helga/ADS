@@ -28,7 +28,7 @@ template <class T> class List {
 				this->first = this->last = new Element(value);
 			}
 			else if (isLast) {
-				this->last = this->last->next = new Element(value);
+				this->last = this->last->next = new Element(value, this->last->next);
 			}
 			else {
 				this->first = new Element(value, this->first);
