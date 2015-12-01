@@ -36,16 +36,15 @@ void TestList::setUp(void) {
 }
 
 void TestList::tearDown(void) {
-    delete[] this->list;
+    delete this->list;
 }
 
 void TestList::testInsertAndRemove(void) {
-    this->list->insert(1, 0);
-    this->list->insert(2, 0);
-    this->list->insert(3, 1);
-    CPPUNIT_ASSERT_EQUAL(2, this->list->remove());
+    this->list->insert(1, true);
     CPPUNIT_ASSERT_EQUAL(1, this->list->remove());
-    CPPUNIT_ASSERT_EQUAL(3, this->list->remove());
+    this->list->insert(1, false);
+    this->list->insert(2, true);
+    CPPUNIT_ASSERT_EQUAL(2, this->list->remove());
 }
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestList );
