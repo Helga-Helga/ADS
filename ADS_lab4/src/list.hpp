@@ -27,7 +27,7 @@ template <class T> class List {
 				this->last = this->last->next = new Element(value);
 			}
 			else {
-				this->first->insert(value, isLast);
+				this->first = new Element(value, this->first);
 			}
 		}
 		T remove() {
