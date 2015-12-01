@@ -24,7 +24,7 @@ template <class T> class List {
 			}
 		}
 		void insert(T value, bool isLast) {
-			if (this->first == NULL && this->last == NULL) {
+			if (!this->first && !this->last) {
 				this->first = this->last = new Element(value);
 			}
 			else if (isLast) {
@@ -36,7 +36,7 @@ template <class T> class List {
 		}
 		T remove() {
 			T value = this->first->value;
-			if (this->first->next == NULL) {
+			if (!this->first->next) {
 				delete this->first;
 				this->first = this->last = NULL;
 			}
