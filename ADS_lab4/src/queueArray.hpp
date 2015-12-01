@@ -18,9 +18,15 @@ public:
 		delete[] this->array;
 	}
 	void push(T elem) {
-		this->array[this->last++] = elem;
+		if (++this->last == this->size) {
+			this->last = 0;
+		}
+		this->array[this->last] = elem;
 	}
 	T pop() {
-		return this->array[this->first++];
+		if (++this->first == this->size) {
+			this->first = 0;
+		}
+		return this->array[this->first];
 	}
 };
