@@ -32,7 +32,7 @@ private:
 };
 
 void TestQueueArray::setUp(void) {
-    this->queue = new QueueArray<int>[3];
+    this->queue = new QueueArray<int>[1];
 }
 
 void TestQueueArray::tearDown(void) {
@@ -40,12 +40,10 @@ void TestQueueArray::tearDown(void) {
 }
 
 void TestQueueArray::testCircularity(void) {
-    this->queue->push(1);
-    this->queue->push(2);
-    this->queue->push(3);
-    CPPUNIT_ASSERT_EQUAL(1, this->queue->pop());
-    this->queue->push(4);
-    CPPUNIT_ASSERT_EQUAL(2, this->queue->pop());
+    for (int i = 0; i<80; i++) {
+        this->queue->push(i);
+        CPPUNIT_ASSERT_EQUAL(this->queue->pop(), i);
+    }
 }
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestQueueArray );
