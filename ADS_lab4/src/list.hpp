@@ -33,6 +33,7 @@ template <class T> class List {
 		T remove() {
 			T value = this->first->value;
 			if (this->first->next == NULL) {
+				delete this->first;
 				this->first = this->last = NULL;
 			}
 			else {
