@@ -44,7 +44,7 @@ void TestList::testInsertAndRemove(void) {
     CPPUNIT_ASSERT_EQUAL(1, this->list->remove());
     this->list->insert(1, false);
     this->list->insert(2, true);
-    CPPUNIT_ASSERT_EQUAL(2, this->list->remove());
+    CPPUNIT_ASSERT_EQUAL(1, this->list->remove());
 }
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestList );
