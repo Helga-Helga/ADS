@@ -1,4 +1,7 @@
 #pragma once
+#include <stdexcept>
+#include <iostream>
+using namespace std;
 template <class T> class List {
 	private:
 		struct Element {
@@ -35,6 +38,9 @@ template <class T> class List {
 			}
 		}
 		T remove() {
+			if (!this->first) {
+				throw runtime_error("List is empty");
+			}
 			T value = this->first->value;
 			if (!this->first->next) {
 				delete this->first;

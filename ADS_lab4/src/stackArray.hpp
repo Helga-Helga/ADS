@@ -1,5 +1,8 @@
 #pragma once
+#include <stdexcept>
+#include <iostream>
 #include "stack.hpp"
+using namespace std;
 
 template <class T> class StackArray : public Stack<T> {
 private:
@@ -16,9 +19,19 @@ public:
 		delete[] this->array;
 	}
 	void push(T elem) {
-		this->array[this->top++] = elem;
+		if (this->top++ != this->size) {
+			this->array[this->top] = elem;
+		}
+		else {
+			throw runtime_error("Stack overflow");
+		}
 	}
 	T pop() {
-		return this->array[--this->top];
+		if (this->top != 0) {
+			return this->array[this->top];
+		}
+		else {
+			throw runtime_error("Stack is empty");
+		}
 	}
 };
