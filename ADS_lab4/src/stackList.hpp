@@ -19,5 +19,6 @@ public:
 		return this->list->remove();
 	}
 	void print() {
+		this->list->printList();
 	}
 };

@@ -53,4 +53,10 @@ template <class T> class List {
 			}
 			return value;
 		}
+		void printList() {
+			for (Element *curr = this->first; curr; curr = curr->next) {
+				cout<<curr->value<<" ";
+			}
+			cout<<endl;
+		}
 };
