@@ -35,7 +35,7 @@ public:
 		}
 	}
 	void print() {
-		for (size_t i = 0; i < this->size; i++) {
+		for (size_t i = 0; i < this->top; i++) {
 			cout<<array[i]<<" ";
 		}
 		cout<<endl;
