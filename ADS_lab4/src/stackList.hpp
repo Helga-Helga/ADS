@@ -18,4 +18,6 @@ public:
 	T pop() {
 		return this->list->remove();
 	}
+	void print() {
+	}
 };
