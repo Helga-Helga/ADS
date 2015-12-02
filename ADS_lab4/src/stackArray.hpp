@@ -34,4 +34,10 @@ public:
 			throw runtime_error("Stack is empty");
 		}
 	}
+	void print() {
+		for (size_t i = 0; i < this->size; i++) {
+			cout<<array[i]<<" ";
+		}
+		cout<<endl;
+	}
 };

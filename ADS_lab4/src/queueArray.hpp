@@ -41,4 +41,22 @@ public:
 		}
 		return this->array[this->first++];
 	}
+	void print() {
+		if (this->last > this->first) {
+			for (size_t i = this->first; i < this->last; i++) {
+				cout<<array[i]<<" ";
+			}	
+		}
+		else {
+			if (this->last < this->first) {
+				for (size_t i = this->first; i < this->size; i++) {
+					cout<<array[i]<<" ";
+				}
+				for (size_t i = 0; i < this->last; i++) {
+					cout<<array[i]<<" ";
+				}
+			}
+		}
+		cout<<endl;
+	}
 };
