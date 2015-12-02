@@ -55,18 +55,18 @@ void TestContainer::tearDown(void) {
 
 void TestContainer::testPushAndPop(void) {
 	for (int i = 0; i < this->containersCount; i++) {
-	    this->containers[i]->push(1);
-	    CPPUNIT_ASSERT_EQUAL(1, this->containers[i]->pop());
+        this->containers[i]->push(2*i);
+	    CPPUNIT_ASSERT_EQUAL(2*i, this->containers[i]->pop());
 	}
     
 }
 
 void TestContainer::testContainer(void) {
     for (int i = 0; i < this->containersCount; i++) {
-	    this->containers[i]->push(1);
-	    CPPUNIT_ASSERT_EQUAL(1, this->containers[i]->pop());
-	    this->containers[i]->push(2);
-	    CPPUNIT_ASSERT_EQUAL(2, this->containers[i]->pop());
+	    this->containers[i]->push(2*i);
+	    CPPUNIT_ASSERT_EQUAL(2*i, this->containers[i]->pop());
+	    this->containers[i]->push(2*i+1);
+	    CPPUNIT_ASSERT_EQUAL(2*i+1, this->containers[i]->pop());
 	}
 }
 
