@@ -42,7 +42,7 @@ void TestQueueArray::tearDown(void) {
 void TestQueueArray::testCircularity(void) {
     for (int i = 0; i<80; i++) {
         this->queue->push(i);
-        CPPUNIT_ASSERT_EQUAL(this->queue->pop(), i);
+        CPPUNIT_ASSERT_EQUAL(i, this->queue->pop());
     }
 }
 
