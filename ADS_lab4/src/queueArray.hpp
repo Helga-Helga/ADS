@@ -21,16 +21,16 @@ public:
 		delete[] this->array;
 	}
 	void push(T elem) {
-		if (this->last == this->first) {
-			throw overflow_error("Stack overflow");
+		if (++this->last == this->first) {
+			throw overflow_error("Queue overflow");
 		}
-		if (++this->last == this->size) {
+		if (this->last == this->size) {
 			this->last = 0;
 		}
 		this->array[this->last++] = elem;
 	}
 	T pop() {
-		if (++this->first == this->size) {
+		if (this->first == this->size) {
 			this->first = 0;
 		}
 		return this->array[this->first++];
