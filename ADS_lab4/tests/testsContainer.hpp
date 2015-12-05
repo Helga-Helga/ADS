@@ -38,12 +38,13 @@ private:
 };
 
 void TestContainer::setUp(void) {
-    this->containersCount = 4;
+    this->containersCount = 5;
     this->containers = new Container<int>*[this->containersCount];
     this->containers[0] = new StackArray<int>();
     this->containers[1] = new QueueArray<int>();
     this->containers[2] = new StackList<int>();
     this->containers[3] = new QueueList<int>();
+    this->containers[4] = new StackArray<int>((StackArray<int>*)(this->containers[0]));
 }
 
 void TestContainer::tearDown(void) {
@@ -58,7 +59,6 @@ void TestContainer::testPushAndPop(void) {
         this->containers[i]->push(2*i);
 	    CPPUNIT_ASSERT_EQUAL(2*i, this->containers[i]->pop());
 	}
-    
 }
 
 void TestContainer::testContainer(void) {
