@@ -2,6 +2,7 @@
 #include "testsList.hpp"
 #include "testsQueueArray.hpp"
 #include "testsStack.hpp"
+#include "testsPostfixForm.hpp"
 
 using namespace CppUnit;
 using namespace std;
