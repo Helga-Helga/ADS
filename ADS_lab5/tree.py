@@ -29,5 +29,19 @@ class Node:
         if self.right:
             self.right.printTree()
 
+    def search(self, data, parent=None):
+        if data < self.data:
+            if self.left is None:
+                self.left = Node(data)
+                return data
+            return self.left.search(data, self)
+        elif data > self.data:
+            if self.right is None:
+                self.right = Node(data)
+                return data
+            return self.right.search(data, self)
+        elif data == self.data:
+            return self.data
+
 
 
