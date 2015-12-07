@@ -11,14 +11,14 @@ class Node:
     def insert(self, data=None):
         if data < self.data:
             if self.left is None:
-                self.left = Node(data, self)
+                self.left = Node(data.strip(), self)
             else:
-                self.left.insert(data)
+                self.left.insert(data.strip())
         elif data > self.data:
             if self.right is None:
-                self.right = Node(data, self)
+                self.right = Node(data.strip(), self)
             else:
-                self.right.insert(data)
+                self.right.insert(data.strip())
         else:
             self.data = data
 
@@ -32,56 +32,57 @@ class Node:
     def search(self, data, parent=None):
         if data < self.data:
             if self.left is None:
-                self.left = Node(data)
-                return self
+                self.left = Node(data.strip())
+                return self.left
             return self.left.search(data, self)
         elif data > self.data:
             if self.right is None:
-                self.right = Node(data)
-                return self
+                self.right = Node(data.strip())
+                return self.right
             return self.right.search(data, self)
         elif data == self.data:
             return self
 
     def delete(self, data):
         node = self.search(data)
-        if node is not None:
-            count = node.childrenCount()
-            if count == 0:
-                if node.parent:
-                    if node.parent.left is node:
-                        del node.parent.left
-                    else:
-                        del node.parent.right
-                    del node
+        if node is None:
+            return
+        count = node.childrenCount()
+        if count == 0:
+            if node.parent:
+                if node.parent.left is node:
+                    node.parent.left = None
                 else:
-                    self.data = None
-            elif count == 1:
-                if node.left:
-                    n = node.left
-                else:
-                    n = node.right
-                if node.parent:
-                    if node.parent.left is node:
-                        node.parent.left = n
-                    else:
-                        node.parent.right = n
-                    del node
-                else:
-                    self.left = n.left
-                    self.right = n.right
-                    self.data = n.data
+                    node.parent.right = None
+                del node
             else:
-                parent = node
-                successor = node.right
-                while successor.left:
-                    parent = successor
-                    successor = successor.left
-                node.data = successor.data
-                if parent.left == successor:
-                    parent.left = successor.right
+                self.data = None
+        elif count == 1:
+            if node.left:
+                n = node.left
+            else:
+                n = node.right
+            if node.parent:
+                if node.parent.left is node:
+                    node.parent.left = n
                 else:
-                    parent.right = successor.right
+                    node.parent.right = n
+                del node
+            else:
+                self.left = n.left
+                self.right = n.right
+                self.data = n.data
+        else:
+            parent = node
+            successor = node.right
+            while successor.left:
+                parent = successor
+                successor = successor.left
+            node.data = successor.data
+            if parent.left == successor:
+                parent.left = successor.right
+            else:
+                parent.right = successor.right
 
     def childrenCount(self):
         count = 0
