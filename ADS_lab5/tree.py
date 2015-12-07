@@ -23,11 +23,11 @@ class Node:
             self.data = data
 
     def printTree(self, i=0):
-        print "|" * i, self.data
+        print '%s %s' % ('|' * i, self.data.strip())
         if self.left:
-            self.left.printTree(i+1)
+            self.left.printTree(i + 1)
         if self.right:
-            self.right.printTree(i+1)
+            self.right.printTree(i + 1)
 
     def search(self, data, parent=None):
         if data < self.data:
