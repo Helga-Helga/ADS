@@ -1,22 +1,20 @@
 __author__ = 'olya'
 
-datafile = open('input.txt', "r+")
-
 
 def search(data):
+    datafile = open('input.txt', "r+")
     for line in datafile:
         if data in line:
             return data
     datafile.write('\n')
     datafile.write(data)
+    datafile.close()
     return data
 
 
 def delete(data):
+    datafile = open('input.txt', "r+")
     for line in datafile:
-        if data not in line:
-            datafile.write(data)
-
-
-def close():
+        if data in line:
+            line.replace(data, '')
     datafile.close()
