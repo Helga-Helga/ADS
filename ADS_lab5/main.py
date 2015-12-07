@@ -1,3 +1,4 @@
+import datetime
 from tree import Node
 from file import search, delete
 
@@ -16,8 +17,13 @@ while ans:
     elif ans == "2":
         print("Searching node...")
         data = raw_input("Enter node data: ")
-        print "Node found:", tree.search(data).data
-        print "Found in file:", search(data)
+        a = datetime.datetime.now()
+        print "Node found: ", tree.search(data).data
+        b = datetime.datetime.now()
+        print "Found in file: ", search(data)
+        c = datetime.datetime.now()
+        print "Search in tree time: ", b - a
+        print "Search in file time: ", c - b
     elif ans == "3":
         print("Deletion node...")
         data = raw_input("Enter node data: ")
