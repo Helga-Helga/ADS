@@ -13,8 +13,9 @@ def search(data):
 
 
 def delete(data):
-    datafile = open('input.txt', "r+")
-    for line in datafile:
-        if data in line:
-            line.replace(data, '')
+    datafile = open('input.txt', "r")
+    new_data = ''.join(line for line in datafile.readlines() if line.strip() != data.strip())
+    datafile.close()
+    datafile = open('input.txt', "w")
+    datafile.write(new_data)
     datafile.close()
