@@ -1,5 +1,5 @@
 from tree import Node
-from file import search, delete, closeFile
+from file import search, delete
 
 tree = Node('')
 with open('input.txt') as f:
@@ -26,7 +26,6 @@ while ans:
         print("Node deleted")
     elif ans == "4":
         print("Goodbye")
-        closeFile()
         ans = None
     else:
         print("Not valid choice. Try again")
