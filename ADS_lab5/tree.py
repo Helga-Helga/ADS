@@ -22,12 +22,12 @@ class Node:
         else:
             self.data = data
 
-    def printTree(self):
+    def printTree(self, i=0):
+        print "|" * i, self.data
         if self.left:
-            self.left.printTree()
-        print self.data
+            self.left.printTree(i+1)
         if self.right:
-            self.right.printTree()
+            self.right.printTree(i+1)
 
     def search(self, data, parent=None):
         if data < self.data:
@@ -73,7 +73,7 @@ class Node:
                     self.data = n.data
             else:
                 parent = node
-                successor= node.right
+                successor = node.right
                 while successor.left:
                     parent = successor
                     successor = successor.left
@@ -90,6 +90,3 @@ class Node:
         if self.right:
             count += 1
         return count
-
-
-
