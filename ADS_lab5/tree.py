@@ -50,9 +50,9 @@ class Node:
             if count == 0:
                 if node.parent:
                     if node.parent.left is node:
-                        node.parent.left = None
+                        del node.parent.left
                     else:
-                        node.parent.right = None
+                        del node.parent.right
                     del node
                 else:
                     self.data = None
