@@ -4,7 +4,7 @@ __author__ = 'olya'
 def search(data):
     datafile = open('input.txt', "r+")
     for line in datafile:
-        if data in line:
+        if data == line:
             return data
     datafile.write('\n')
     datafile.write(data)
